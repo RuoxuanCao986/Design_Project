@@ -20,7 +20,7 @@
     },
     {
       "name": "HuggingFace",
-  "base_url": "https://router.huggingface.co/hf-inference/v1",
+      "base_url": "https://router.huggingface.co/hf-inference/v1",
       "api_key": "auto",
       "client_type": "openai",
       "max_retry": 2,
@@ -145,6 +145,33 @@
       "price_out": 0.0,
       "context_length": 4096,
       "description": "本地运行的Llama 2 7B"
+    },
+    {
+      "model_identifier": "google/gemma-2b",
+      "name": "gemma-2b",
+      "api_provider": "HuggingFace",
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "context_length": 8192,
+      "description": "Google Gemma 2B - 轻量级开源模型"
+    },
+    {
+      "model_identifier": "microsoft/phi-2",
+      "name": "phi-2",
+      "api_provider": "HuggingFace",
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "context_length": 2048,
+      "description": "Microsoft Phi-2 - 小型高效模型"
+    },
+    {
+      "model_identifier": "facebook/opt-1.3b",
+      "name": "opt-1.3b",
+      "api_provider": "HuggingFace",
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "context_length": 2048,
+      "description": "Facebook OPT-1.3B - 开源模型"
     }
   ],
   "watermark_configs": {

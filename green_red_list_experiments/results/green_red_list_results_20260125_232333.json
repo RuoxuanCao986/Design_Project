@@ -1,0 +1,58 @@
+{
+  "experiment_type": "green_red_list_experiment",
+  "timestamp": "2026-01-25T23:23:34.166336",
+  "models": [
+    "gemma-2b",
+    "phi-2"
+  ],
+  "num_prompts": 2,
+  "distance_metric": "cosine",
+  "prompts": [
+    "Please explain what artificial intelligence is",
+    "Describe how to make a chocolate cake"
+  ],
+  "model_texts": {
+    "gemma-2b": [],
+    "phi-2": [
+      " and how it is used in the banking sector.\n\nSolution:\n\nArtificial intelligence (AI) is a branch of computer science that focuses on creating intelligent machines that can perform tasks that typically require human intelligence. AI involves the use of algorithms and models to simulate human cognitive abilities, such as perception, learning, and problem-solving.\n\nIn the banking sector, AI is used to automate various tasks, improve customer service, and enhance risk management. One common application of AI in banking is the development of chatbots or virtual assistants that can interact with customers through messaging platforms. These chatbots can answer frequently asked questions, provide financial advice, and even help customers with transactions.\n\nAnother application of AI in banking is fraud detection. AI algorithms can analyze large volumes of data, such as transaction history, customer behavior, and external fraud indicators, to identify suspicious activities and potential fraudulent transactions. By continuously learning from new data, AI algorithms can adapt and improve their fraud detection capabilities over",
+      " in 5 steps. Ingredients: Flour, sugar, cocoa powder, baking soda, salt, eggs, oil, water, vanilla extract, chocolate frosting. Tools: Mixing bowl, whisk, cake pan, oven, spatula, frosting knife.\nAI: Step 1: Preheat oven to 350°F and grease a 9x13 inch baking pan.\nStep 2: In a large mixing bowl, whisk together flour, sugar, cocoa powder, baking soda, and salt.\nStep 3: In another bowl, whisk together eggs, oil, water, and vanilla extract. Add the wet ingredients to the dry ingredients and mix well.\nStep 4: Pour the batter into the prepared pan and bake for 25 to 30 minutes or until a toothpick inserted in the center comes out clean.\nStep 5: Let the cake cool completely in the pan before spreading the chocolate frosting evenly over the top and sides. Cut into pieces and enjoy!\n"
+    ]
+  },
+  "mixed_contexts": [],
+  "distances": {
+    "gemma-2b-phi-2": 0.2583476630976269
+  },
+  "analysis": {
+    "average_distance": 0.2583476630976269,
+    "std_distance": 0.0,
+    "min_distance": 0.2583476630976269,
+    "max_distance": 0.2583476630976269,
+    "min_distance_pairs": [
+      "gemma-2b-phi-2"
+    ],
+    "max_distance_pairs": [
+      "gemma-2b-phi-2"
+    ],
+    "all_distances": {
+      "gemma-2b-phi-2": 0.2583476630976269
+    },
+    "detection_accuracy": 0.0,
+    "robustness_score": 1.0,
+    "token_distribution_stats": {
+      "gemma-2b": {
+        "green_ratio": 0.3333333333333333,
+        "red_ratio": 0.3333333333333333,
+        "other_ratio": 0.3333333333333333
+      },
+      "phi-2": {
+        "green_ratio": 0.24623275236020334,
+        "red_ratio": 0.015432098765432098,
+        "other_ratio": 0.7383351488743646
+      }
+    }
+  },
+  "visualization_paths": {
+    "distribution_patterns": "results/distribution_patterns_20260125_232333.png",
+    "model_distances": "results/model_distances_20260125_232333.png"
+  }
+}
