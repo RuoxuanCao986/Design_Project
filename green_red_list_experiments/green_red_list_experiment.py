@@ -153,15 +153,16 @@ class GreenRedListExperiment:
                 tokenizer.pad_token_id = tokenizer.eos_token_id
                 print(f"   Set pad_token to eos_token: {tokenizer.pad_token}")
             
-            # Force use CPU to avoid CUDA initialization issues
-            device = "cpu"
-            print(f"   Using device: {device} (forced to avoid CUDA initialization issues)")
+            # Determine device (GPU if available, otherwise CPU)
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            print(f"   Using device: {device}")
             
             # Load model
             print(f"   Step 2: Loading model...")
             model = AutoModelForCausalLM.from_pretrained(
                 model_identifier,
-                torch_dtype=torch.float32,
+                torch_dtype=torch.float16 if device == "cuda" else torch.float32,
+                device_map="auto" if device == "cuda" else None,
                 trust_remote_code=True
             )
             print(f"   ✅ Model loaded successfully")

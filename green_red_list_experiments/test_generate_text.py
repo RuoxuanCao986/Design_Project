@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """
 Test script to debug the generate_text method
+Supports command line arguments to specify models
 """
 
 import sys
 import os
+import argparse
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from llama_demos.model_config_manager import ModelConfigManager
 
 def generate_text_local(model_name, prompt, max_tokens=30):
     """
@@ -99,20 +104,52 @@ def test_generate_text():
     """
     Test direct model loading without model manager
     """
+    parser = argparse.ArgumentParser(description="Test text generation with different models")
+    parser.add_argument("model", nargs="*", help="Model nickname(s) to test (e.g., llama-3.2-1b deepseek-chat)")
+    parser.add_argument("--max-tokens", type=int, default=30, help="Maximum tokens to generate")
+    parser.add_argument("--prompt", type=str, default="Please explain what artificial intelligence is", help="Test prompt")
+    args = parser.parse_args()
+    
+    # Get model list from command line or use default
+    if args.model:
+        model_nicknames = args.model
+    else:
+        # Default to a small model for quick testing
+        model_nicknames = ["facebook/opt-1.3b"]
+    
+    # Initialize model config manager
+    config_manager = ModelConfigManager()
+    
     print("Testing direct model loading...")
     print("=" * 80)
+    print(f"Test prompt: {args.prompt}")
+    print(f"Max tokens: {args.max_tokens}")
+    print(f"Models to test: {model_nicknames}")
+    print("=" * 80)
     
-    test_prompt = "Please explain what artificial intelligence is"
+    # Convert nicknames to model identifiers
+    test_models = []
+    for nickname in model_nicknames:
+        model_info = config_manager.get_model_info_by_nickname(nickname)
+        if model_info:
+            model_identifier = model_info["model_identifier"]
+            test_models.append((nickname, model_identifier))
+            print(f"✓ {nickname} -> {model_identifier}")
+        else:
+            # Try to use the nickname directly as a model identifier
+            test_models.append((nickname, nickname))
+            print(f"? {nickname} (using as direct identifier)")
     
-    # Test with Hugging Face model identifiers
-    test_models = [
-        "facebook/opt-1.3b"  # Smallest model for fastest testing
-    ]
+    print("=" * 80)
     
-    for model in test_models:
-        print(f"\nTesting with {model}...")
+    # Test each model
+    for nickname, model_identifier in test_models:
+        print(f"\n{'='*80}")
+        print(f"Testing: {nickname}")
+        print(f"Model: {model_identifier}")
+        print(f"{'='*80}")
         try:
-            text = generate_text_local(model, test_prompt)
+            text = generate_text_local(model_identifier, args.prompt, args.max_tokens)
             if text:
                 print("✅ Success!")
             else:

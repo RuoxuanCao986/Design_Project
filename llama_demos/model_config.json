@@ -68,6 +68,15 @@
       "description": "DeepSeek Chat - 对话优化模型"
     },
     {
+      "model_identifier": "deepseek-ai/DeepSeek-V3.1-Base",
+      "name": "deepseek-v3.1-base",
+      "api_provider": "DeepSeek",
+      "price_in": 2.0,
+      "price_out": 8.0,
+      "context_length": 128000,
+      "description": "DeepSeek V3.1 Base - 基础模型"
+    },
+    {
       "model_identifier": "meta-llama/Llama-2-7b-hf",
       "name": "llama-2-7b",
       "api_provider": "HuggingFace",
@@ -172,6 +181,26 @@
       "price_out": 0.0,
       "context_length": 2048,
       "description": "Facebook OPT-1.3B - 开源模型"
+    },
+    {
+      "model_identifier": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+      "name": "mixtral-8x7b",
+      "api_provider": "HuggingFace",
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "context_length": 32768,
+      "description": "Mistral Mixtral 8x7B - 高性能混合专家模型",
+      "requires_auth": true
+    },
+    {
+      "model_identifier": "teknium/OpenHermes-2.5-Mistral-7B",
+      "name": "teuken-7b",
+      "api_provider": "HuggingFace",
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "context_length": 8192,
+      "description": "Teuken 7B - 基于 Mistral 7B 的优化模型",
+      "requires_auth": true
     }
   ],
   "watermark_configs": {
