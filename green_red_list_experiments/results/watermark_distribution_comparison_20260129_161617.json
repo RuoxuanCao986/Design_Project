@@ -1,0 +1,225 @@
+{
+  "experiment_type": "watermark_distribution_comparison",
+  "timestamp": "2026-01-29T16:16:17.018777",
+  "models": [
+    "gemma-2b",
+    "phi-2"
+  ],
+  "num_prompts": 1,
+  "prompts": [
+    "Please explain what artificial intelligence is"
+  ],
+  "watermark_config": {
+    "key_name": "default",
+    "hash_key": 113997,
+    "seeding_scheme": "ff-anchored_minhash_prf",
+    "gamma": 0.25,
+    "green_list_size": 12573
+  },
+  "results_by_prompt": {
+    "0": {
+      "prompt": "Please explain what artificial intelligence is",
+      "distances": {
+        "gemma-2b-phi-2": {
+          "average": {
+            "js_divergence": 0.6497613447053092,
+            "cosine_distance": 0.961635776928493,
+            "top_k_overlap": 0.014285714285714287
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "js_divergence": 0.6321057677268982,
+              "cosine_distance": 0.9584531188011169,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "js_divergence": 0.6734521985054016,
+              "cosine_distance": 0.9993661046028137,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "js_divergence": 0.6674612164497375,
+              "cosine_distance": 0.9998690485954285,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "js_divergence": 0.651085376739502,
+              "cosine_distance": 0.9990074038505554,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "js_divergence": 0.6668460369110107,
+              "cosine_distance": 0.9998055100440979,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "js_divergence": 0.671155571937561,
+              "cosine_distance": 0.9995576739311218,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "js_divergence": 0.5862232446670532,
+              "cosine_distance": 0.7753915786743164,
+              "top_k_overlap": 0.1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "reference_profiles": {
+    "gemma-2b": {
+      "mean_mean_prob": 7.953551539685577e-05,
+      "mean_entropy": 3.061577320098877,
+      "mean_top_prob": 0.36779192090034485,
+      "std_mean_prob": 6.736227894932334e-12,
+      "std_entropy": 1.3985871076583862,
+      "std_top_prob": 0.2436911016702652,
+      "cov": [
+        [
+          3.277210807829139e-23,
+          4.187481917103518e-12,
+          -4.853143556669627e-13
+        ],
+        [
+          4.187481917103518e-12,
+          2.2820535180591475,
+          -0.3679934116183128
+        ],
+        [
+          -4.853143556669627e-13,
+          -0.3679934116183128,
+          0.06928290695310829
+        ]
+      ],
+      "tokenwise_stats": [
+        {
+          "mean_prob": 7.953551539685577e-05,
+          "entropy": 2.725379228591919,
+          "top_prob": 0.4626609981060028
+        },
+        {
+          "mean_prob": 7.953550084494054e-05,
+          "entropy": 2.7711846828460693,
+          "top_prob": 0.29605844616889954
+        },
+        {
+          "mean_prob": 7.953551539685577e-05,
+          "entropy": 2.75566029548645,
+          "top_prob": 0.34929418563842773
+        },
+        {
+          "mean_prob": 7.953551539685577e-05,
+          "entropy": 4.367832183837891,
+          "top_prob": 0.10115814208984375
+        },
+        {
+          "mean_prob": 7.953551539685577e-05,
+          "entropy": 5.560183525085449,
+          "top_prob": 0.08611428737640381
+        },
+        {
+          "mean_prob": 7.953550812089816e-05,
+          "entropy": 2.4399051666259766,
+          "top_prob": 0.41271114349365234
+        },
+        {
+          "mean_prob": 7.953550812089816e-05,
+          "entropy": 0.8108956813812256,
+          "top_prob": 0.8665462136268616
+        }
+      ]
+    },
+    "phi-2": {
+      "mean_mean_prob": 7.953551539685577e-05,
+      "mean_entropy": 4.111617088317871,
+      "mean_top_prob": 0.35375306010246277,
+      "std_mean_prob": 5.500106880357292e-12,
+      "std_entropy": 1.4008333683013916,
+      "std_top_prob": 0.26121947169303894,
+      "cov": [
+        [
+          3.529303946892918e-23,
+          -4.099195520061253e-12,
+          8.338853244345643e-13
+        ],
+        [
+          -4.099195520061253e-12,
+          2.289389831757327,
+          -0.42491109480318057
+        ],
+        [
+          8.338853244345643e-13,
+          -0.42491109480318057,
+          0.07960821095768686
+        ]
+      ],
+      "tokenwise_stats": [
+        {
+          "mean_prob": 7.953550812089816e-05,
+          "entropy": 5.7469282150268555,
+          "top_prob": 0.043161459267139435
+        },
+        {
+          "mean_prob": 7.953551539685577e-05,
+          "entropy": 4.174046993255615,
+          "top_prob": 0.3753191828727722
+        },
+        {
+          "mean_prob": 7.953552267281339e-05,
+          "entropy": 2.1929168701171875,
+          "top_prob": 0.7354446649551392
+        },
+        {
+          "mean_prob": 7.953552267281339e-05,
+          "entropy": 5.068538665771484,
+          "top_prob": 0.19708354771137238
+        },
+        {
+          "mean_prob": 7.953551539685577e-05,
+          "entropy": 1.820082664489746,
+          "top_prob": 0.7481568455696106
+        },
+        {
+          "mean_prob": 7.953550812089816e-05,
+          "entropy": 4.894862174987793,
+          "top_prob": 0.20171679556369781
+        },
+        {
+          "mean_prob": 7.953551539685577e-05,
+          "entropy": 4.883942604064941,
+          "top_prob": 0.17538872361183167
+        }
+      ]
+    }
+  },
+  "green_list_sample": [
+    29888,
+    31282,
+    49943,
+    32483,
+    36020,
+    6743,
+    45663,
+    6536,
+    44214,
+    24492,
+    12148,
+    34730,
+    14501,
+    15669,
+    13305,
+    15873,
+    18125,
+    40901,
+    1267,
+    16432
+  ]
+}

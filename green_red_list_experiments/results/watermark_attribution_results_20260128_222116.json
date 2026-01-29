@@ -1,0 +1,51 @@
+{
+  "experiment_type": "watermark_attribution",
+  "timestamp": "2026-01-28T22:21:16.289327",
+  "models": [
+    "llama-3.2-3b",
+    "deepseek-v3",
+    "phi-2"
+  ],
+  "num_prompts": 3,
+  "total_segments": 9,
+  "accuracy": 0.4444444444444444,
+  "mixed_text": "they computer artificial deep them you what quantum learning with at could where autonomous who with what quantum robotics he been do been to supervised of virtual why you we that does robotics quantum virtual unsupervised been unsupervised why do as neural how was what did at should why is of we who being she this can which had does been were them that what language computer augmented with can drones on why semi-supervised those and neural and been he computing in neural they intelligence and algorithm that from we with of neural supervised which have we as at is be natural and quantum will their by they at the of machine supervised vision did by they does should could what she semi-supervised reinforcement to we does would how at you will had natural neural are been that i artificial had she and processing we of virtual where were for learning their these autonomous these quantum natural augmented was as intelligence intelligence has and which in are at can which artificial computing robotics did network in with semi-supervised and i",
+  "segments": [
+    "they computer artificial deep them you what quantum learning with at could where autonomous who with what quantum robotics he",
+    "been do been to supervised of virtual why you we that does robotics quantum virtual unsupervised been unsupervised why do",
+    "as neural how was what did at should why is of we who being she this can which had does",
+    "been were them that what language computer augmented with can drones on why semi-supervised those and neural and been he",
+    "computing in neural they intelligence and algorithm that from we with of neural supervised which have we as at is",
+    "be natural and quantum will their by they at the of machine supervised vision did by they does should could",
+    "what she semi-supervised reinforcement to we does would how at you will had natural neural are been that i artificial",
+    "had she and processing we of virtual where were for learning their these autonomous these quantum natural augmented was as",
+    "intelligence intelligence has and which in are at can which artificial computing robotics did network in with semi-supervised and i"
+  ],
+  "true_attribution": [
+    "phi-2",
+    "deepseek-v3",
+    "phi-2",
+    "llama-3.2-3b",
+    "llama-3.2-3b",
+    "llama-3.2-3b",
+    "deepseek-v3",
+    "phi-2",
+    "deepseek-v3"
+  ],
+  "predicted_attribution": [
+    "llama-3.2-3b",
+    "phi-2",
+    "phi-2",
+    "phi-2",
+    "llama-3.2-3b",
+    "llama-3.2-3b",
+    "phi-2",
+    "phi-2",
+    "phi-2"
+  ],
+  "watermark_keys": {
+    "llama-3.2-3b": 333649,
+    "deepseek-v3": 951344,
+    "phi-2": 696190
+  }
+}

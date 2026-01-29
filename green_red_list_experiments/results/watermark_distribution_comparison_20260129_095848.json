@@ -1,0 +1,99 @@
+{
+  "experiment_type": "watermark_distribution_comparison",
+  "timestamp": "2026-01-29T09:58:48.959904",
+  "models": [
+    "gemma-2b",
+    "phi-2"
+  ],
+  "num_prompts": 1,
+  "prompts": [
+    "Please explain what artificial intelligence is"
+  ],
+  "watermark_config": {
+    "key_name": "default",
+    "hash_key": 678362,
+    "seeding_scheme": "ff-anchored_minhash_prf",
+    "gamma": 0.25,
+    "green_list_size": 12573
+  },
+  "results_by_prompt": {
+    "0": {
+      "prompt": "Please explain what artificial intelligence is",
+      "distances": {
+        "gemma-2b-phi-2": {
+          "average": {
+            "js_divergence": 0.6540083544594901,
+            "cosine_distance": 0.9962266172681536,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "js_divergence": 0.64821457862854,
+              "cosine_distance": 0.9994040131568909,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "js_divergence": 0.6774806976318359,
+              "cosine_distance": 0.9994720816612244,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "js_divergence": 0.6208154559135437,
+              "cosine_distance": 0.9936158061027527,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "js_divergence": 0.6633388996124268,
+              "cosine_distance": 0.9997872710227966,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "js_divergence": 0.6299046277999878,
+              "cosine_distance": 0.9945463538169861,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "js_divergence": 0.6856598258018494,
+              "cosine_distance": 0.9999535083770752,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "js_divergence": 0.6526443958282471,
+              "cosine_distance": 0.9868072867393494,
+              "top_k_overlap": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "green_list_sample": [
+    47128,
+    42364,
+    31003,
+    6984,
+    10485,
+    5478,
+    47565,
+    40199,
+    21637,
+    7486,
+    34545,
+    12720,
+    41350,
+    44547,
+    12956,
+    49055,
+    21139,
+    38526,
+    46737,
+    13241
+  ]
+}

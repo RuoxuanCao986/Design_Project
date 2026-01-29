@@ -1,0 +1,134 @@
+{
+  "summary": {
+    "experiment_type": "Watermark Attribution Experiment",
+    "models": [
+      "llama-3.2-3b",
+      "deepseek-v3",
+      "phi-2"
+    ],
+    "num_prompts": 3,
+    "total_segments": 9,
+    "accuracy": 0.4444444444444444,
+    "timestamp": "2026-01-28T22:21:16.289694"
+  },
+  "detailed_results": {
+    "per_segment": [
+      {
+        "segment": "they computer artificial deep them you what quantum learning with at could where autonomous who with what quantum robotics he",
+        "true_model": "phi-2",
+        "predicted_model": "llama-3.2-3b",
+        "correct": false,
+        "scores": {
+          "llama-3.2-3b": 0.75,
+          "deepseek-v3": 0.5,
+          "phi-2": 0.45
+        }
+      },
+      {
+        "segment": "been do been to supervised of virtual why you we that does robotics quantum virtual unsupervised been unsupervised why do",
+        "true_model": "deepseek-v3",
+        "predicted_model": "phi-2",
+        "correct": false,
+        "scores": {
+          "llama-3.2-3b": 0.5,
+          "deepseek-v3": 0.45,
+          "phi-2": 0.5
+        }
+      },
+      {
+        "segment": "as neural how was what did at should why is of we who being she this can which had does",
+        "true_model": "phi-2",
+        "predicted_model": "phi-2",
+        "correct": true,
+        "scores": {
+          "llama-3.2-3b": 0.6,
+          "deepseek-v3": 0.5,
+          "phi-2": 0.55
+        }
+      },
+      {
+        "segment": "been were them that what language computer augmented with can drones on why semi-supervised those and neural and been he",
+        "true_model": "llama-3.2-3b",
+        "predicted_model": "phi-2",
+        "correct": false,
+        "scores": {
+          "llama-3.2-3b": 0.5,
+          "deepseek-v3": 0.8,
+          "phi-2": 0.3
+        }
+      },
+      {
+        "segment": "computing in neural they intelligence and algorithm that from we with of neural supervised which have we as at is",
+        "true_model": "llama-3.2-3b",
+        "predicted_model": "llama-3.2-3b",
+        "correct": true,
+        "scores": {
+          "llama-3.2-3b": 0.55,
+          "deepseek-v3": 0.55,
+          "phi-2": 0.5
+        }
+      },
+      {
+        "segment": "be natural and quantum will their by they at the of machine supervised vision did by they does should could",
+        "true_model": "llama-3.2-3b",
+        "predicted_model": "llama-3.2-3b",
+        "correct": true,
+        "scores": {
+          "llama-3.2-3b": 0.5,
+          "deepseek-v3": 0.5,
+          "phi-2": 0.6
+        }
+      },
+      {
+        "segment": "what she semi-supervised reinforcement to we does would how at you will had natural neural are been that i artificial",
+        "true_model": "deepseek-v3",
+        "predicted_model": "phi-2",
+        "correct": false,
+        "scores": {
+          "llama-3.2-3b": 0.5,
+          "deepseek-v3": 0.6,
+          "phi-2": 0.3
+        }
+      },
+      {
+        "segment": "had she and processing we of virtual where were for learning their these autonomous these quantum natural augmented was as",
+        "true_model": "phi-2",
+        "predicted_model": "phi-2",
+        "correct": true,
+        "scores": {
+          "llama-3.2-3b": 0.55,
+          "deepseek-v3": 0.45,
+          "phi-2": 0.35
+        }
+      },
+      {
+        "segment": "intelligence intelligence has and which in are at can which artificial computing robotics did network in with semi-supervised and i",
+        "true_model": "deepseek-v3",
+        "predicted_model": "phi-2",
+        "correct": false,
+        "scores": {
+          "llama-3.2-3b": 0.5,
+          "deepseek-v3": 0.55,
+          "phi-2": 0.55
+        }
+      }
+    ],
+    "per_model": {
+      "llama-3.2-3b": {
+        "total_segments": 3,
+        "correctly_attributed": 2,
+        "accuracy": 0.6666666664444444
+      },
+      "deepseek-v3": {
+        "total_segments": 3,
+        "correctly_attributed": 0,
+        "accuracy": 0.0
+      },
+      "phi-2": {
+        "total_segments": 3,
+        "correctly_attributed": 2,
+        "accuracy": 0.6666666664444444
+      }
+    }
+  }
+}
