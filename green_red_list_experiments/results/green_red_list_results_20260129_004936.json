@@ -1,0 +1,280 @@
+{
+  "experiment_type": "green_red_list_experiment",
+  "timestamp": "2026-01-29T00:49:40.887373",
+  "models": [
+    "llama-3.2-3b",
+    "llama-2-7b",
+    "llama-2-7b-chat",
+    "qwen-3-8b"
+  ],
+  "num_prompts": 10,
+  "distance_metrics": [
+    "euclidean",
+    "cosine",
+    "manhattan",
+    "jensen_shannon"
+  ],
+  "prompts": [
+    "Please explain what artificial intelligence is",
+    "Describe how to make a chocolate cake",
+    "Analyze the causes and effects of climate change",
+    "Tell a story about friendship",
+    "Explain the basic principles of quantum computing",
+    "Describe how to learn a new language",
+    "Analyze the impact of social media on society",
+    "Tell a story about courage",
+    "Explain how blockchain technology works",
+    "Describe how to maintain a healthy lifestyle"
+  ],
+  "model_texts": {
+    "llama-3.2-3b": [
+      "?\nArtificial Intelligence is the science of making machines that are intelligent. It is the science of making machines that have the ability to think and act like humans. It is the science of making machines that can learn and adapt to changing situations. It is the science of making machines that can reason and solve problems. It is the science of making machines that can communicate and interact with humans. It is the science of making machines that can perform tasks that require intelligence and reasoning.\nArtificial Intelligence is the science of making machines that are intelligent. It is the science of making machines that have the ability to think and act like humans. It is the science of making machines that can learn and adapt to changing situations. It is the science of making machines that can reason and solve problems. It is the science of making machines that can communicate and interact with humans. It is the science of making machines that can perform tasks that require intelligence and reasoning.\nArtificial Intelligence is the science of making machines that are intelligent.",
+      " recipe. How to make a chocolate cake recipe. What is the best chocolate cake recipe. How to make a chocolate cake. How to make chocolate cake.\nHow to make a chocolate cake recipe. What is the best chocolate cake recipe. How to make a chocolate cake. How to make chocolate cake. How to make a chocolate cake recipe. What is the best chocolate cake recipe. How to make a chocolate cake. How to make chocolate cake. How to make a chocolate cake recipe. What is the best chocolate cake recipe. How to make a chocolate cake. How to make chocolate cake.\nHow to make a chocolate cake recipe. What is the best chocolate cake recipe. How to make a chocolate cake. How to make chocolate cake. How to make a chocolate cake recipe. What is the best chocolate cake recipe. How to make a chocolate cake. How to make chocolate cake. How to make a chocolate cake recipe. What is the best chocolate cake recipe. How to make a chocolate cake. How",
+      ".\nDescribe the current and future impacts of climate change.\nExplain the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate change.\nDescribe the current and future impacts of climate",
+      " and how it is the glue that holds our lives together.\nTell a story about friendship and how it is the glue that holds our lives together. Your story may be about a friendship that you have, or it may be a story about a friend you have known or have met.\nFriendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the glue that holds our lives together. Friendship is the",
+      ".\nDescribe the applications of quantum computing.\nDiscuss the challenges of building a practical quantum computer.\nQuantum computing is a rapidly developing field that promises to revolutionize the way we solve problems in the future. Quantum computers use quantum mechanics to perform calculations that are beyond the reach of classical computers. In this article, we will discuss the basics of quantum computing, including its principles, applications, and challenges.\nQuantum computing is based on the principles of quantum mechanics, which govern the behavior of subatomic particles such as electrons and photons. Quantum mechanics is a branch of physics that deals with the behavior of matter and energy at the atomic and subatomic level. Quantum mechanics is characterized by the existence of wave-particle duality, which means that particles can exhibit both wave-like and particle-like properties.\nQuantum mechanics is also characterized by the uncertainty principle, which states that it is impossible to precisely determine both the position and momentum of a particle at the same time. This principle is the basis of quantum computing, which",
+      ".\nA. through immersion\nB. through conversation\nC. through reading\nD. through writing\nAnswer: B",
+      " and its effect on the younger generation\nThe impact of social media on society and its effect on the younger generation\nThe impact of social media on society and its effect on the younger generation\nSocial media has become an integral part of our lives, with over 3.6 billion people worldwide using at least one social media platform. The impact of social media on society and its effect on the younger generation is profound, and it is important to analyze the impact of social media on society and its effect on the younger generation. In this essay, we will explore the impact of social media on society and its effect on the younger generation.\nThe Impact of Social Media on Society\nSocial media has revolutionized the way we communicate, connect, and share information. It has also had a significant impact on society, both positively and negatively. On the positive side, social media has increased our ability to connect with people from all over the world, and has made it easier to share information and ideas. It has also",
+      ", strength, and tenacity. It can be a true story or an invented one. It can be about a person, a place, an event, or an object. It can be about a real person or a fictional character. It can be about a person or a place. It can be about a real person or a fictional character. It can be about a person, a place, an event, or an object. It can be about a real person or a fictional character. It can be about a person, a place, an event, or an object. It can be about a real person or a fictional character. It can be about a person, a place, an event, or an object. It can be about a real person or a fictional character. It can be about a person, a place, an event, or an object. It can be about a real person or a fictional character. It can be about a person, a place, an event, or an",
+      ".\nBlockchain technology is a distributed ledger technology that is used to record transactions across a network of computers in a secure and transparent manner. It is based on the concept of a \"blockchain,\" which is a digital ledger that records transactions between parties in a secure and transparent manner. The blockchain is a distributed ledger, meaning that it is stored and maintained by a network of computers rather than a central authority. This distributed nature makes it resistant to tampering and censorship, and it allows for a high level of transparency and security.\nThe blockchain is a database that is shared among the nodes in the network. Each node has a copy of the blockchain, which is constantly being updated with new transactions. When a new transaction is made, it is added to the blockchain, and all nodes in the network are notified of the change. This process is known as \"mining,\" and it is how new blocks are added to the blockchain.\nThe blockchain is also designed to be immutable, meaning that once a transaction is added",
+      "\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle\nDescribe how to maintain a healthy lifestyle"
+    ],
+    "llama-2-7b": [],
+    "llama-2-7b-chat": [],
+    "qwen-3-8b": [
+      " and its applications.\nArtificial Intelligence (AI) is a branch of computer science that focuses on creating systems capable of performing tasks that typically require human intelligence. These tasks include learning, reasoning, problem-solving, perception, and language understanding. AI systems are designed to analyze data, recognize patterns, and make decisions with minimal human intervention.\n\n### Key Components of AI:\n1. **Machine Learning (ML)**: A subset of AI that enables systems to learn from data, identify patterns, and make decisions with minimal human intervention. ML algorithms improve over time as they are exposed to more data.\n2. **Natural Language Processing (NLP)**: Allows machines to understand, interpret, and generate human language. Applications include chatbots, translation services, and voice assistants.\n3. **Computer Vision**: Enables machines to interpret and understand visual information from the world, such as images and videos. Applications include facial recognition and autonomous vehicles.\n4. **Robotics**: Combines AI with physical robots to perform tasks in"
+    ]
+  },
+  "mixed_contexts": [],
+  "results_by_metric": {
+    "euclidean": {
+      "distances": {
+        "llama-3.2-3b-llama-2-7b": 0.38968637925748323,
+        "llama-3.2-3b-llama-2-7b-chat": 0.38968637925748323,
+        "llama-3.2-3b-qwen-3-8b": 0.13090233746467456,
+        "llama-2-7b-llama-2-7b-chat": 0.0,
+        "llama-2-7b-qwen-3-8b": 0.4735318955892527,
+        "llama-2-7b-chat-qwen-3-8b": 0.4735318955892527
+      },
+      "analysis": {
+        "average_distance": 0.3095564811930244,
+        "std_distance": 0.1799814769637827,
+        "min_distance": 0.0,
+        "max_distance": 0.4735318955892527,
+        "min_distance_pairs": [
+          "llama-2-7b-llama-2-7b-chat"
+        ],
+        "max_distance_pairs": [
+          "llama-2-7b-qwen-3-8b",
+          "llama-2-7b-chat-qwen-3-8b"
+        ],
+        "all_distances": {
+          "llama-3.2-3b-llama-2-7b": 0.38968637925748323,
+          "llama-3.2-3b-llama-2-7b-chat": 0.38968637925748323,
+          "llama-3.2-3b-qwen-3-8b": 0.13090233746467456,
+          "llama-2-7b-llama-2-7b-chat": 0.0,
+          "llama-2-7b-qwen-3-8b": 0.4735318955892527,
+          "llama-2-7b-chat-qwen-3-8b": 0.4735318955892527
+        },
+        "detection_accuracy": 0.9999999978882098,
+        "robustness_score": 1.0,
+        "token_distribution_stats": {
+          "llama-3.2-3b": {
+            "green_ratio": 0.333286861277045,
+            "red_ratio": 0.05780669099158148,
+            "other_ratio": 0.6089064477313736
+          },
+          "llama-2-7b": {
+            "green_ratio": 0.3333333333333333,
+            "red_ratio": 0.3333333333333333,
+            "other_ratio": 0.3333333333333333
+          },
+          "llama-2-7b-chat": {
+            "green_ratio": 0.3333333333333333,
+            "red_ratio": 0.3333333333333333,
+            "other_ratio": 0.3333333333333333
+          },
+          "qwen-3-8b": {
+            "green_ratio": 0.24342105263157895,
+            "red_ratio": 0.05263157894736842,
+            "other_ratio": 0.7039473684210527
+          }
+        }
+      }
+    },
+    "cosine": {
+      "distances": {
+        "llama-3.2-3b-llama-2-7b": 0.1711346480992113,
+        "llama-3.2-3b-llama-2-7b-chat": 0.1711346480992113,
+        "llama-3.2-3b-qwen-3-8b": 0.014054998032906552,
+        "llama-2-7b-llama-2-7b-chat": 0.0,
+        "llama-2-7b-qwen-3-8b": 0.2268009474734689,
+        "llama-2-7b-chat-qwen-3-8b": 0.2268009474734689
+      },
+      "analysis": {
+        "average_distance": 0.13498769819637782,
+        "std_distance": 0.09337999972636438,
+        "min_distance": 0.0,
+        "max_distance": 0.2268009474734689,
+        "min_distance_pairs": [
+          "llama-2-7b-llama-2-7b-chat"
+        ],
+        "max_distance_pairs": [
+          "llama-2-7b-qwen-3-8b",
+          "llama-2-7b-chat-qwen-3-8b"
+        ],
+        "all_distances": {
+          "llama-3.2-3b-llama-2-7b": 0.1711346480992113,
+          "llama-3.2-3b-llama-2-7b-chat": 0.1711346480992113,
+          "llama-3.2-3b-qwen-3-8b": 0.014054998032906552,
+          "llama-2-7b-llama-2-7b-chat": 0.0,
+          "llama-2-7b-qwen-3-8b": 0.2268009474734689,
+          "llama-2-7b-chat-qwen-3-8b": 0.2268009474734689
+        },
+        "detection_accuracy": 0.9999999955908474,
+        "robustness_score": 1.0,
+        "token_distribution_stats": {
+          "llama-3.2-3b": {
+            "green_ratio": 0.333286861277045,
+            "red_ratio": 0.05780669099158148,
+            "other_ratio": 0.6089064477313736
+          },
+          "llama-2-7b": {
+            "green_ratio": 0.3333333333333333,
+            "red_ratio": 0.3333333333333333,
+            "other_ratio": 0.3333333333333333
+          },
+          "llama-2-7b-chat": {
+            "green_ratio": 0.3333333333333333,
+            "red_ratio": 0.3333333333333333,
+            "other_ratio": 0.3333333333333333
+          },
+          "qwen-3-8b": {
+            "green_ratio": 0.24342105263157895,
+            "red_ratio": 0.05263157894736842,
+            "other_ratio": 0.7039473684210527
+          }
+        }
+      }
+    },
+    "manhattan": {
+      "distances": {
+        "llama-3.2-3b-llama-2-7b": 0.5511462287960804,
+        "llama-3.2-3b-llama-2-7b-chat": 0.5511462287960804,
+        "llama-3.2-3b-qwen-3-8b": 0.19008184137935816,
+        "llama-2-7b-llama-2-7b-chat": 0.0,
+        "llama-2-7b-qwen-3-8b": 0.7412280701754386,
+        "llama-2-7b-chat-qwen-3-8b": 0.7412280701754386
+      },
+      "analysis": {
+        "average_distance": 0.46247173988706597,
+        "std_distance": 0.2766504654859147,
+        "min_distance": 0.0,
+        "max_distance": 0.7412280701754386,
+        "min_distance_pairs": [
+          "llama-2-7b-llama-2-7b-chat"
+        ],
+        "max_distance_pairs": [
+          "llama-2-7b-qwen-3-8b",
+          "llama-2-7b-chat-qwen-3-8b"
+        ],
+        "all_distances": {
+          "llama-3.2-3b-llama-2-7b": 0.5511462287960804,
+          "llama-3.2-3b-llama-2-7b-chat": 0.5511462287960804,
+          "llama-3.2-3b-qwen-3-8b": 0.19008184137935816,
+          "llama-2-7b-llama-2-7b-chat": 0.0,
+          "llama-2-7b-qwen-3-8b": 0.7412280701754386,
+          "llama-2-7b-chat-qwen-3-8b": 0.7412280701754386
+        },
+        "detection_accuracy": 0.9999999986508876,
+        "robustness_score": 1.0,
+        "token_distribution_stats": {
+          "llama-3.2-3b": {
+            "green_ratio": 0.333286861277045,
+            "red_ratio": 0.05780669099158148,
+            "other_ratio": 0.6089064477313736
+          },
+          "llama-2-7b": {
+            "green_ratio": 0.3333333333333333,
+            "red_ratio": 0.3333333333333333,
+            "other_ratio": 0.3333333333333333
+          },
+          "llama-2-7b-chat": {
+            "green_ratio": 0.3333333333333333,
+            "red_ratio": 0.3333333333333333,
+            "other_ratio": 0.3333333333333333
+          },
+          "qwen-3-8b": {
+            "green_ratio": 0.24342105263157895,
+            "red_ratio": 0.05263157894736842,
+            "other_ratio": 0.7039473684210527
+          }
+        }
+      }
+    },
+    "jensen_shannon": {
+      "distances": {
+        "llama-3.2-3b-llama-2-7b": 0.32693804429857387,
+        "llama-3.2-3b-llama-2-7b-chat": 0.32693804429857387,
+        "llama-3.2-3b-qwen-3-8b": 0.08742135518887104,
+        "llama-2-7b-llama-2-7b-chat": 0.0,
+        "llama-2-7b-qwen-3-8b": 0.368775874835771,
+        "llama-2-7b-chat-qwen-3-8b": 0.368775874835771
+      },
+      "analysis": {
+        "average_distance": 0.2464748655762601,
+        "std_distance": 0.1465785332847064,
+        "min_distance": 0.0,
+        "max_distance": 0.368775874835771,
+        "min_distance_pairs": [
+          "llama-2-7b-llama-2-7b-chat"
+        ],
+        "max_distance_pairs": [
+          "llama-2-7b-qwen-3-8b",
+          "llama-2-7b-chat-qwen-3-8b"
+        ],
+        "all_distances": {
+          "llama-3.2-3b-llama-2-7b": 0.32693804429857387,
+          "llama-3.2-3b-llama-2-7b-chat": 0.32693804429857387,
+          "llama-3.2-3b-qwen-3-8b": 0.08742135518887104,
+          "llama-2-7b-llama-2-7b-chat": 0.0,
+          "llama-2-7b-qwen-3-8b": 0.368775874835771,
+          "llama-2-7b-chat-qwen-3-8b": 0.368775874835771
+        },
+        "detection_accuracy": 0.9999999972883258,
+        "robustness_score": 1.0,
+        "token_distribution_stats": {
+          "llama-3.2-3b": {
+            "green_ratio": 0.333286861277045,
+            "red_ratio": 0.05780669099158148,
+            "other_ratio": 0.6089064477313736
+          },
+          "llama-2-7b": {
+            "green_ratio": 0.3333333333333333,
+            "red_ratio": 0.3333333333333333,
+            "other_ratio": 0.3333333333333333
+          },
+          "llama-2-7b-chat": {
+            "green_ratio": 0.3333333333333333,
+            "red_ratio": 0.3333333333333333,
+            "other_ratio": 0.3333333333333333
+          },
+          "qwen-3-8b": {
+            "green_ratio": 0.24342105263157895,
+            "red_ratio": 0.05263157894736842,
+            "other_ratio": 0.7039473684210527
+          }
+        }
+      }
+    }
+  },
+  "visualization_paths": {
+    "distribution_patterns": "results/distribution_patterns_20260129_004936.png",
+    "model_distances": {
+      "euclidean": "results/model_distances_euclidean_20260129_004936.png",
+      "cosine": "results/model_distances_cosine_20260129_004936.png",
+      "manhattan": "results/model_distances_manhattan_20260129_004936.png",
+      "jensen_shannon": "results/model_distances_jensen_shannon_20260129_004936.png"
+    }
+  }
+}

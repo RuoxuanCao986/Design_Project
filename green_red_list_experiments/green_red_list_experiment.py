@@ -69,12 +69,33 @@ class GreenRedListExperiment:
         
         # 红列表：特定领域或罕见的词汇
         self.red_tokens = {
-            "neural", "network", "algorithm", "quantum", "computing", "cryptocurrency",
-            "blockchain", "artificial", "intelligence", "machine", "learning", "deep",
-            "reinforcement", "supervised", "unsupervised", "semi-supervised", "natural",
-            "language", "processing", "computer", "vision", "robotics", "autonomous",
-            "drones", "virtual", "reality", "augmented", "reality", "internet", "things",
-            "iot", "cloud", "computing", "edge", "computing", "big", "data", "analytics"
+            "neural", "network", "algorithm", "quantum", "computing", "artificial",
+            "intelligence", "machine", "learning", "deep", "reinforcement", "supervised",
+            "unsupervised", "semi-supervised", "natural", "language", "processing",
+            "computer", "vision", "robotics", "autonomous", "drones", "virtual", "augmented",
+            "transformer", "embedding", "optimizer", "loss", "attention", "gradient",
+            "backpropagation", "overfitting", "regularization", "epoch", "batch", "activation",
+            "blockchain", "cryptocurrency", "smart_contract", "ledger", "mining",
+            "decentralization", "ethereum", "bitcoin", "wallet", "tokenomics", "hash",
+            "consensus", "proof_of_work", "proof_of_stake", "nonce", "gas_fee",
+            "qubit", "superposition", "entanglement", "decoherence", "quantum_gate",
+            "measurement", "spin", "wavefunction", "boson", "fermion", "quantum_circuit",
+            "recipe", "ingredients", "bake", "mix", "oven", "flavor", "dessert",
+            "chocolate", "vanilla", "sugar", "butter", "whisk", "knead", "marinate",
+            "saute", "grill", "roast", "boil", "simmer", "garnish",
+            "courage", "loyalty", "adventure", "hero", "journey", "friendship", "emotion",
+            "love", "fear", "hope", "despair", "triumph", "conflict", "resolution",
+            "dialogue", "character", "plot", "narrative", "setting",
+            "media", "impact", "society", "influence", "behavior", "analysis", "trend",
+            "technology", "communication", "culture", "policy", "economy", "environment",
+            "sustainability", "ethics", "governance", "demographics",
+            "CNN", "RNN", "GAN", "BERT", "LSTM", "Adam", "dropout", "batch_norm",
+            "reinforcement_learning", "deep_neural_network", "backpropagation", "overfitting",
+            "Solana", "Polygon", "NFT", "staking", "oracle", "proof_of_stake",
+            "Hadamard", "Pauli", "Bell_state", "Bloch_sphere", "quantum_teleportation",
+            "crepe", "soufflé", "ganache", "roux", "julienne", "caramelize", "deglaze", "blanch",
+            "protagonist", "antagonist", "climax", "denouement", "epiphany", "betrayal", "sacrifice",
+            "algorithmic_bias", "polarization", "gig_economy", "carbon_footprint", "socioeconomic"
         }
     
     def _jensen_shannon_distance(self, p: np.ndarray, q: np.ndarray) -> float:
@@ -157,10 +178,20 @@ class GreenRedListExperiment:
             device = "cuda" if torch.cuda.is_available() else "cpu"
             print(f"   Using device: {device}")
             
-            # Load model
+            # Load model with pad_token_id fix for models like Phi
             print(f"   Step 2: Loading model...")
+            from transformers import AutoConfig
+            
+            config = AutoConfig.from_pretrained(model_identifier, trust_remote_code=True)
+            
+            # Fix for models that don't have pad_token_id in config (e.g., Phi)
+            if not hasattr(config, 'pad_token_id') or config.pad_token_id is None:
+                config.pad_token_id = tokenizer.pad_token_id
+                print(f"   Set config.pad_token_id to {tokenizer.pad_token_id}")
+            
             model = AutoModelForCausalLM.from_pretrained(
                 model_identifier,
+                config=config,
                 torch_dtype=torch.float16 if device == "cuda" else torch.float32,
                 device_map="auto" if device == "cuda" else None,
                 trust_remote_code=True
@@ -185,7 +216,7 @@ class GreenRedListExperiment:
             with torch.no_grad():
                 output_tokens = model.generate(
                     **inputs,
-                    max_new_tokens=50,  # Reduced for faster CPU generation
+                    max_new_tokens=200,  
                     pad_token_id=tokenizer.pad_token_id,
                     eos_token_id=tokenizer.eos_token_id
                 )
@@ -439,7 +470,7 @@ class GreenRedListExperiment:
             model_distributions: Token distributions for each model
             output_path: Output file path
         """
-        plt.figure(figsize=(12, 8))
+        plt.figure(figsize=(14, 8))
         
         # Prepare data
         model_names = list(model_distributions.keys())
@@ -451,63 +482,101 @@ class GreenRedListExperiment:
         x = np.arange(len(model_names))
         width = 0.25
         
-        # Plot bar chart
-        plt.bar(x - width, green_ratios, width, label='Green Tokens', color='green', alpha=0.7)
-        plt.bar(x, red_ratios, width, label='Red Tokens', color='red', alpha=0.7)
-        plt.bar(x + width, other_ratios, width, label='Other Tokens', color='gray', alpha=0.7)
+        # Plot bar chart with better styling
+        bars1 = plt.bar(x - width, green_ratios, width, label='Green Tokens', 
+                       color='#2ecc71', edgecolor='black', linewidth=1.5, alpha=0.8)
+        bars2 = plt.bar(x, red_ratios, width, label='Red Tokens', 
+                       color='#e74c3c', edgecolor='black', linewidth=1.5, alpha=0.8)
+        bars3 = plt.bar(x + width, other_ratios, width, label='Other Tokens', 
+                       color='#95a5a6', edgecolor='black', linewidth=1.5, alpha=0.8)
+        
+        # Add value labels on top of bars
+        for bars in [bars1, bars2, bars3]:
+            for bar in bars:
+                height = bar.get_height()
+                if height > 0.01:  # Only show labels for significant values
+                    plt.text(bar.get_x() + bar.get_width()/2., height,
+                            f'{height:.3f}',
+                            ha='center', va='bottom', fontsize=8, fontweight='bold')
         
         # Set chart properties
-        plt.title('Token Distribution Comparison')
-        plt.xlabel('Model')
-        plt.ylabel('Ratio')
-        plt.xticks(x, model_names)
-        plt.legend()
-        plt.grid(True, alpha=0.3, axis='y')
+        plt.title('Token Distribution Comparison Across Models', 
+                 fontsize=16, fontweight='bold', pad=20)
+        plt.xlabel('Model', fontsize=12, fontweight='bold')
+        plt.ylabel('Ratio', fontsize=12, fontweight='bold')
+        plt.xticks(x, model_names, fontsize=10)
+        plt.yticks(fontsize=10)
+        plt.legend(fontsize=11, loc='upper right')
+        plt.grid(True, alpha=0.3, axis='y', linestyle='--')
         
-        # Save image
+        # Set y-axis limit to better show differences
+        plt.ylim(0, 1.0)
+        
+        # Save image with higher quality
         plt.tight_layout()
-        plt.savefig(output_path)
+        plt.savefig(output_path, dpi=300, bbox_inches='tight')
         plt.close()
         
         print(f"📊 Distribution visualization saved to: {output_path}")
     
-    def visualize_distances(self, distances: Dict[Tuple[str, str], float], output_path: str):
+    def visualize_distances(self, distances: Dict[Tuple[str, str], float], output_path: str, metric_name: str = ""):
         """
         Visualize distances between model pairs
         
         Args:
             distances: Distances between model pairs
             output_path: Output file path
+            metric_name: Name of the distance metric
         """
-        plt.figure(figsize=(12, 8))
+        plt.figure(figsize=(14, 8))
         
         # Prepare data
         labels = [f"{pair[0]}-{pair[1]}" for pair in distances.keys()]
         values = list(distances.values())
         
-        # Plot bar chart
-        plt.bar(labels, values)
-        plt.title('Distances Between Model Pairs')
-        plt.xlabel('Model Pairs')
-        plt.ylabel('Distance Value')
-        plt.xticks(rotation=45, ha='right')
-        plt.grid(True, alpha=0.3, axis='y')
+        # Create color gradient based on distance values
+        colors = plt.cm.viridis(np.linspace(0, 1, len(values)))
         
-        # Save image
+        # Plot bar chart with better styling
+        bars = plt.bar(labels, values, color=colors, edgecolor='black', linewidth=1.5, alpha=0.8)
+        
+        # Add value labels on top of bars
+        for bar, value in zip(bars, values):
+            height = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width()/2., height,
+                    f'{value:.4f}',
+                    ha='center', va='bottom', fontsize=10, fontweight='bold')
+        
+        # Set chart properties
+        title = f'Distances Between Model Pairs ({metric_name})' if metric_name else 'Distances Between Model Pairs'
+        plt.title(title, fontsize=16, fontweight='bold', pad=20)
+        plt.xlabel('Model Pairs', fontsize=12, fontweight='bold')
+        plt.ylabel('Distance Value', fontsize=12, fontweight='bold')
+        plt.xticks(rotation=45, ha='right', fontsize=10)
+        plt.yticks(fontsize=10)
+        plt.grid(True, alpha=0.3, axis='y', linestyle='--')
+        
+        # Add colorbar to show distance scale
+        sm = plt.cm.ScalarMappable(cmap=plt.cm.viridis, 
+                                   norm=plt.Normalize(vmin=min(values), vmax=max(values)))
+        sm.set_array([])
+        cbar = plt.colorbar(sm, ax=plt.gca())
+        cbar.set_label('Distance Value', fontsize=10, fontweight='bold')
+        
+        # Save image with higher quality
         plt.tight_layout()
-        plt.savefig(output_path)
+        plt.savefig(output_path, dpi=300, bbox_inches='tight')
         plt.close()
         
         print(f"📊 Distance visualization saved to: {output_path}")
     
-    def run_experiment(self, models: List[str], num_prompts: int = 10, distance_metric: str = "cosine"):
+    def run_experiment(self, models: List[str], num_prompts: int = 10):
         """
-        Run complete experiment
+        Run complete experiment with all distance metrics
         
         Args:
             models: List of models to use
             num_prompts: Number of prompts
-            distance_metric: Distance metric method
         """
         print("=" * 80)
         print("🔬 Starting Green/Red List Distance Experiment")
@@ -553,55 +622,75 @@ class GreenRedListExperiment:
             model_distributions[model] = distribution
         print(f"   ✅ Calculated token distributions for {len(model_distributions)} models")
         
-        # 5. Calculate cross-model token distribution distances
-        print(f"\n5. Calculating cross-model token distribution distances (using {distance_metric} metric)...")
-        distances = self.calculate_token_distances(model_distributions, distance_metric)
-        print(f"   ✅ Calculated distances for {len(distances)} model pairs")
+        # 5. Calculate cross-model token distribution distances for all metrics
+        print("\n5. Calculating cross-model token distribution distances for all metrics...")
+        all_distances = {}
+        all_analyses = {}
+        for metric in self.distance_metrics.keys():
+            print(f"   Calculating distances using {metric} metric...")
+            distances = self.calculate_token_distances(model_distributions, metric)
+            analysis = self.analyze_results(distances, model_distributions)
+            all_distances[metric] = distances
+            all_analyses[metric] = analysis
+            print(f"   ✅ {metric}: Average distance = {analysis['average_distance']:.4f}")
+        print(f"   ✅ Calculated distances for {len(all_distances)} metrics")
         
-        # 6. Analyze results
-        print("\n6. Analyzing results...")
-        analysis = self.analyze_results(distances, model_distributions)
-        print(f"   ✅ Average distance: {analysis['average_distance']:.4f}")
-        print(f"   ✅ Distance range: {analysis['min_distance']:.4f} - {analysis['max_distance']:.4f}")
-        print(f"   ✅ Detection accuracy: {analysis['detection_accuracy']:.4f}")
-        print(f"   ✅ Robustness score: {analysis['robustness_score']:.4f}")
+        # 6. Analyze results for all metrics
+        print("\n6. Analyzing results for all metrics...")
+        for metric, analysis in all_analyses.items():
+            print(f"   {metric}:")
+            print(f"     Average distance: {analysis['average_distance']:.4f}")
+            print(f"     Distance range: {analysis['min_distance']:.4f} - {analysis['max_distance']:.4f}")
+            print(f"     Detection accuracy: {analysis['detection_accuracy']:.4f}")
+            print(f"     Robustness score: {analysis['robustness_score']:.4f}")
         
-        # 7. Visualize results
+        # 7. Visualize results for all metrics
         print("\n7. Visualizing results...")
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # Visualize distributions
+        # Visualize distributions (only once)
         distribution_plot_path = self.output_dir / f"distribution_patterns_{timestamp}.png"
         self.visualize_distributions(model_distributions, str(distribution_plot_path))
         
-        # Visualize distances
-        distance_plot_path = self.output_dir / f"model_distances_{timestamp}.png"
-        self.visualize_distances(distances, str(distance_plot_path))
+        # Visualize distances for each metric
+        distance_plot_paths = {}
+        for metric, distances in all_distances.items():
+            distance_plot_path = self.output_dir / f"model_distances_{metric}_{timestamp}.png"
+            self.visualize_distances(distances, str(distance_plot_path), metric_name=metric)
+            distance_plot_paths[metric] = str(distance_plot_path)
         
         # 8. Save results
         print("\n8. Saving results...")
-        # Convert tuple keys to string keys
-        distances_dict = {f"{pair[0]}-{pair[1]}": float(dist) for pair, dist in distances.items()}
         
-        # Fix tuples in analysis
-        analysis_fixed = analysis.copy()
-        analysis_fixed["min_distance_pairs"] = [f"{pair[0]}-{pair[1]}" for pair in analysis["min_distance_pairs"]]
-        analysis_fixed["max_distance_pairs"] = [f"{pair[0]}-{pair[1]}" for pair in analysis["max_distance_pairs"]]
+        # Prepare results for all metrics
+        results_by_metric = {}
+        for metric, distances in all_distances.items():
+            # Convert tuple keys to string keys
+            distances_dict = {f"{pair[0]}-{pair[1]}": float(dist) for pair, dist in distances.items()}
+            
+            # Fix tuples in analysis
+            analysis_fixed = all_analyses[metric].copy()
+            analysis_fixed["min_distance_pairs"] = [f"{pair[0]}-{pair[1]}" for pair in analysis_fixed["min_distance_pairs"]]
+            analysis_fixed["max_distance_pairs"] = [f"{pair[0]}-{pair[1]}" for pair in analysis_fixed["max_distance_pairs"]]
+            
+            results_by_metric[metric] = {
+                "distances": distances_dict,
+                "analysis": analysis_fixed
+            }
         
         results = {
             "experiment_type": "green_red_list_experiment",
             "timestamp": datetime.now().isoformat(),
             "models": models,
             "num_prompts": num_prompts,
-            "distance_metric": distance_metric,
+            "distance_metrics": list(self.distance_metrics.keys()),
             "prompts": prompts,
             "model_texts": model_texts,
             "mixed_contexts": mixed_contexts,
-            "distances": distances_dict,
-            "analysis": analysis_fixed,
+            "results_by_metric": results_by_metric,
             "visualization_paths": {
                 "distribution_patterns": str(distribution_plot_path),
-                "model_distances": str(distance_plot_path)
+                "model_distances": distance_plot_paths
             }
         }
         
@@ -619,15 +708,21 @@ class GreenRedListExperiment:
         print(f"Experiment type: Green/Red List Distance Experiment")
         print(f"Models used: {', '.join(models)}")
         print(f"Number of prompts: {num_prompts}")
-        print(f"Distance metric: {distance_metric}")
-        print(f"Average distance: {analysis['average_distance']:.4f}")
-        print(f"Distance range: {analysis['min_distance']:.4f} - {analysis['max_distance']:.4f}")
-        print(f"Detection accuracy: {analysis['detection_accuracy']:.4f}")
-        print(f"Robustness score: {analysis['robustness_score']:.4f}")
-        print(f"Minimum distance pairs: {analysis['min_distance_pairs']}")
-        print(f"Maximum distance pairs: {analysis['max_distance_pairs']}")
+        print(f"Distance metrics used: {', '.join(self.distance_metrics.keys())}")
+        print("\nResults by metric:")
+        for metric, analysis in all_analyses.items():
+            print(f"\n  {metric.upper()}:")
+            print(f"    Average distance: {analysis['average_distance']:.4f}")
+            print(f"    Distance range: {analysis['min_distance']:.4f} - {analysis['max_distance']:.4f}")
+            print(f"    Detection accuracy: {analysis['detection_accuracy']:.4f}")
+            print(f"    Robustness score: {analysis['robustness_score']:.4f}")
+            print(f"    Min distance pairs: {analysis['min_distance_pairs']}")
+            print(f"    Max distance pairs: {analysis['max_distance_pairs']}")
         print(f"Results file: {results_path}")
-        print(f"Visualization files: {distribution_plot_path}, {distance_plot_path}")
+        print(f"Distribution visualization: {distribution_plot_path}")
+        print(f"Distance visualizations:")
+        for metric, path in distance_plot_paths.items():
+            print(f"  - {metric}: {path}")
         print("=" * 80)
         print("🎉 Experiment completed!")
         print("=" * 80)
@@ -641,8 +736,6 @@ if __name__ == "__main__":
                         help="List of models to use")
     parser.add_argument("--num-prompts", type=int, default=10,
                         help="Number of prompts")
-    parser.add_argument("--distance-metric", choices=["euclidean", "cosine", "manhattan", "jensen_shannon"],
-                        default="cosine", help="Distance metric")
     parser.add_argument("--output-dir", default="results",
                         help="Output directory for results")
     
@@ -657,6 +750,5 @@ if __name__ == "__main__":
     # 运行实验
     experiment.run_experiment(
         models=args.models,
-        num_prompts=args.num_prompts,
-        distance_metric=args.distance_metric
+        num_prompts=args.num_prompts
     )
