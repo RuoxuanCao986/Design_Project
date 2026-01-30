@@ -46,7 +46,7 @@ class WatermarkDistributionComparison:
         self.model_manager = ModelConfigManager()
         
         # 加载的模型缓存
-        self.loaded_models = {}
+        self.loaded_models = None
     
     def generate_watermark_key(self, key_name: str) -> int:
         """
@@ -98,9 +98,6 @@ class WatermarkDistributionComparison:
         Returns:
             (model, tokenizer) 元组
         """
-        if model_name in self.loaded_models:
-            return self.loaded_models[model_name]
-        
         # 获取模型信息
         model_info = self.model_manager.get_model_info_by_nickname(model_name)
         if not model_info:
@@ -134,7 +131,6 @@ class WatermarkDistributionComparison:
         
         model.eval()
         
-        self.loaded_models[model_name] = (model, tokenizer, device)
         return model, tokenizer, device
     
     def get_green_distribution(self, model, input_ids, green_ids):
@@ -150,7 +146,7 @@ class WatermarkDistributionComparison:
             每个 token 的条件分布列表
         """
         with torch.no_grad():
-            logits = model(input_ids).logits  # [batch_size, seq_len, vocab_size]
+            logits = model(input_ids, use_cache=False).logits  # [batch_size, seq_len, vocab_size]
         
         # 计算概率分布
         probs = torch.softmax(logits, dim=-1)
@@ -166,7 +162,8 @@ class WatermarkDistributionComparison:
         green_probs = probs[:, :, valid_green_ids]
         
         # 归一化到条件分布
-        green_probs = green_probs / green_probs.sum(dim=-1, keepdim=True)
+        eps = 1e-10
+        green_probs = green_probs / (green_probs.sum(dim=-1, keepdim=True) + eps)
         
         # 转换为列表，每个元素是一个 token 的分布
         token_distributions = []
@@ -176,21 +173,45 @@ class WatermarkDistributionComparison:
         
         return token_distributions
     
-    def jensen_shannon_divergence(self, p, q):
+    def lp_distance(self, p, q, p_norm=2):
         """
-        计算 JS 散度
+        计算 Lp 距离
+        
+        Args:
+            p: 分布 1
+            q: 分布 2
+            p_norm: p范数，默认为2（欧几里得距离）
+            
+        Returns:
+            Lp 距离
+        """
+        return torch.norm(p - q, p=p_norm, dim=-1)
+    
+    def l1_distance(self, p, q):
+        """
+        计算 L1 距离（曼哈顿距离）
         
         Args:
             p: 分布 1
             q: 分布 2
             
         Returns:
-            JS 散度
+            L1 距离
         """
-        m = 0.5 * (p + q)
-        kl_pm = torch.sum(p * torch.log(p / m), dim=-1)
-        kl_qm = torch.sum(q * torch.log(q / m), dim=-1)
-        return 0.5 * (kl_pm + kl_qm)
+        return torch.norm(p - q, p=1, dim=-1)
+    
+    def l2_distance(self, p, q):
+        """
+        计算 L2 距离（欧几里得距离）
+        
+        Args:
+            p: 分布 1
+            q: 分布 2
+            
+        Returns:
+            L2 距离
+        """
+        return torch.norm(p - q, p=2, dim=-1)
     
     def cosine_distance(self, p, q):
         """
@@ -246,46 +267,35 @@ class WatermarkDistributionComparison:
         # 计算每个 token 的分布特征
         tokenwise_stats = []
         mean_probs = []
-        entropy_values = []
         top_probs = []
         
         for dist_array in dist_arrays:
             # 计算分布的统计特征
+            dist_array = dist_array + 1e-10
+            dist_array = dist_array / np.sum(dist_array)
             mean_prob = np.mean(dist_array)
-            entropy = -np.sum(dist_array * np.log(dist_array + 1e-10))
             top_prob = np.max(dist_array)
             
             mean_probs.append(mean_prob)
-            entropy_values.append(entropy)
             top_probs.append(top_prob)
             
             tokenwise_stats.append({
                 "mean_prob": float(mean_prob),
-                "entropy": float(entropy),
                 "top_prob": float(top_prob)
             })
         
         # 计算统计量
         mean_mean_prob = np.mean(mean_probs)
-        mean_entropy = np.mean(entropy_values)
         mean_top_prob = np.mean(top_probs)
         
         std_mean_prob = np.std(mean_probs)
-        std_entropy = np.std(entropy_values)
         std_top_prob = np.std(top_probs)
-        
-        # 计算协方差矩阵
-        stats_matrix = np.column_stack([mean_probs, entropy_values, top_probs])
-        cov = np.cov(stats_matrix.T)
         
         profile = {
             "mean_mean_prob": float(mean_mean_prob),
-            "mean_entropy": float(mean_entropy),
             "mean_top_prob": float(mean_top_prob),
             "std_mean_prob": float(std_mean_prob),
-            "std_entropy": float(std_entropy),
             "std_top_prob": float(std_top_prob),
-            "cov": cov.tolist(),
             "tokenwise_stats": tokenwise_stats
         }
         
@@ -345,6 +355,8 @@ class WatermarkDistributionComparison:
             watermark_key_name: watermark key 名称
             gamma: green list 占比
         """
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
         print("=" * 80)
         print("🔬 开始 Watermark 分布比较实验")
         print("=" * 80)
@@ -415,8 +427,11 @@ class WatermarkDistributionComparison:
                         # 计算每个 token 的距离
                         token_distances = []
                         for token_idx, (p, q) in enumerate(zip(model1_dists, model2_dists)):
-                            # 计算 JS 散度
-                            js_div = self.jensen_shannon_divergence(p, q).item()
+                            # 计算 L1 距离
+                            l1_dist = self.l1_distance(p, q).item()
+                            
+                            # 计算 L2 距离
+                            l2_dist = self.l2_distance(p, q).item()
                             
                             # 计算余弦距离
                             cos_dist = self.cosine_distance(p, q).item()
@@ -426,19 +441,22 @@ class WatermarkDistributionComparison:
                             
                             token_distances.append({
                                 "token_idx": token_idx,
-                                "js_divergence": js_div,
+                                "l1_distance": l1_dist,
+                                "l2_distance": l2_dist,
                                 "cosine_distance": cos_dist,
                                 "top_k_overlap": topk_overlap
                             })
                         
                         # 计算平均距离
-                        avg_js_div = sum(d["js_divergence"] for d in token_distances) / len(token_distances)
+                        avg_l1_dist = sum(d["l1_distance"] for d in token_distances) / len(token_distances)
+                        avg_l2_dist = sum(d["l2_distance"] for d in token_distances) / len(token_distances)
                         avg_cos_dist = sum(d["cosine_distance"] for d in token_distances) / len(token_distances)
                         avg_topk_overlap = sum(d["top_k_overlap"] for d in token_distances) / len(token_distances)
                         
                         distances[f"{model1}-{model2}"] = {
                             "average": {
-                                "js_divergence": avg_js_div,
+                                "l1_distance": avg_l1_dist,
+                                "l2_distance": avg_l2_dist,
                                 "cosine_distance": avg_cos_dist,
                                 "top_k_overlap": avg_topk_overlap
                             },
@@ -446,7 +464,8 @@ class WatermarkDistributionComparison:
                         }
                         
                         print(f"   {model1} vs {model2}:")
-                        print(f"     平均 JS divergence: {avg_js_div:.6f}")
+                        print(f"     平均 L1 distance: {avg_l1_dist:.6f}")
+                        print(f"     平均 L2 distance: {avg_l2_dist:.6f}")
                         print(f"     平均 Cosine distance: {avg_cos_dist:.6f}")
                         print(f"     平均 Top-10 overlap: {avg_topk_overlap:.4f}")
             
@@ -477,10 +496,8 @@ class WatermarkDistributionComparison:
                 reference_profiles[model_name] = profile
                 print(f"   {model_name}:")
                 print(f"     Mean prob: {profile['mean_mean_prob']:.6f}")
-                print(f"     Mean entropy: {profile['mean_entropy']:.6f}")
                 print(f"     Mean top prob: {profile['mean_top_prob']:.6f}")
                 print(f"     Std prob: {profile['std_mean_prob']:.6f}")
-                print(f"     Std entropy: {profile['std_entropy']:.6f}")
         
         # 8. 保存结果
         print("\n7. 保存结果...")
@@ -524,10 +541,8 @@ class WatermarkDistributionComparison:
         for model_name, profile in reference_profiles.items():
             print(f"  {model_name}:")
             print(f"    Mean prob: {profile['mean_mean_prob']:.6f}")
-            print(f"    Mean entropy: {profile['mean_entropy']:.6f}")
             print(f"    Mean top prob: {profile['mean_top_prob']:.6f}")
             print(f"    Std prob: {profile['std_mean_prob']:.6f}")
-            print(f"    Std entropy: {profile['std_entropy']:.6f}")
         print(f"结果文件: {results_path}")
         print("=" * 80)
         print("🎉 实验完成!")

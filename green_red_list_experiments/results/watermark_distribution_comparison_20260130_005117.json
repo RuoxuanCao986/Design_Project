@@ -1,0 +1,3048 @@
+{
+  "experiment_type": "watermark_distribution_comparison",
+  "timestamp": "2026-01-30T00:51:17.180086",
+  "models": [
+    "llama-3.2-3b",
+    "llama-3.2-1b",
+    "gemma-2b"
+  ],
+  "num_prompts": 10,
+  "prompts": [
+    "Please explain what artificial intelligence is",
+    "Describe how to make a chocolate cake",
+    "Analyze the causes and effects of climate change",
+    "Tell a story about friendship",
+    "Explain the basic principles of quantum computing",
+    "Describe how to learn a new language",
+    "Analyze the impact of social media on society",
+    "Tell a story about courage",
+    "Explain how blockchain technology works",
+    "Describe how to maintain a healthy lifestyle"
+  ],
+  "watermark_config": {
+    "key_name": "default",
+    "hash_key": 739723,
+    "seeding_scheme": "ff-anchored_minhash_prf",
+    "gamma": 0.25,
+    "green_list_size": 32064
+  },
+  "results_by_prompt": {
+    "0": {
+      "prompt": "Please explain what artificial intelligence is",
+      "distances": {
+        "llama-3.2-3b-llama-3.2-1b": {
+          "average": {
+            "l1_distance": 0.35281808035714285,
+            "l2_distance": 0.08464922223772321,
+            "cosine_distance": 0.05754743303571429,
+            "top_k_overlap": 0.7999999999999999
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 0.06732177734375,
+              "l2_distance": 0.0307769775390625,
+              "cosine_distance": 0.0,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 0.12286376953125,
+              "l2_distance": 0.019927978515625,
+              "cosine_distance": 0.00244140625,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 0.44189453125,
+              "l2_distance": 0.1346435546875,
+              "cosine_distance": 0.0244140625,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 0.224365234375,
+              "l2_distance": 0.0897216796875,
+              "cosine_distance": 0.0048828125,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 0.8212890625,
+              "l2_distance": 0.056488037109375,
+              "cosine_distance": 0.29345703125,
+              "top_k_overlap": 0.3
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 0.53271484375,
+              "l2_distance": 0.166748046875,
+              "cosine_distance": 0.07470703125,
+              "top_k_overlap": 0.7
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 0.25927734375,
+              "l2_distance": 0.09423828125,
+              "cosine_distance": 0.0029296875,
+              "top_k_overlap": 0.8
+            }
+          ]
+        },
+        "llama-3.2-3b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9845145089285714,
+            "l2_distance": 0.8397739955357143,
+            "cosine_distance": 0.9949079241071429,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.73486328125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9833984375,
+              "l2_distance": 0.4755859375,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.95703125,
+              "l2_distance": 0.4853515625,
+              "cosine_distance": 0.9951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9873046875,
+              "l2_distance": 1.060546875,
+              "cosine_distance": 0.99853515625,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.9931640625,
+              "l2_distance": 0.9921875,
+              "cosine_distance": 0.9794921875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.9921875,
+              "l2_distance": 1.0634765625,
+              "cosine_distance": 0.998046875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 1.06640625,
+              "cosine_distance": 0.99365234375,
+              "top_k_overlap": 0.0
+            }
+          ]
+        },
+        "llama-3.2-1b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9852120535714286,
+            "l2_distance": 0.8385532924107143,
+            "cosine_distance": 0.9958844866071429,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.763671875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9833984375,
+              "l2_distance": 0.476318359375,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.9716796875,
+              "l2_distance": 0.56298828125,
+              "cosine_distance": 0.99658203125,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9853515625,
+              "l2_distance": 1.025390625,
+              "cosine_distance": 0.99755859375,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.994140625,
+              "l2_distance": 0.99365234375,
+              "cosine_distance": 0.9951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.9912109375,
+              "l2_distance": 1.03515625,
+              "cosine_distance": 0.9951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.9814453125,
+              "l2_distance": 1.0126953125,
+              "cosine_distance": 0.9873046875,
+              "top_k_overlap": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "1": {
+      "prompt": "Describe how to make a chocolate cake",
+      "distances": {
+        "llama-3.2-3b-llama-3.2-1b": {
+          "average": {
+            "l1_distance": 0.30126190185546875,
+            "l2_distance": 0.07464027404785156,
+            "cosine_distance": 0.03509521484375,
+            "top_k_overlap": 0.8
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 0.06732177734375,
+              "l2_distance": 0.0307769775390625,
+              "cosine_distance": 0.0,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 0.3330078125,
+              "l2_distance": 0.08599853515625,
+              "cosine_distance": 0.00244140625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 0.343505859375,
+              "l2_distance": 0.13720703125,
+              "cosine_distance": 0.00634765625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 0.3203125,
+              "l2_distance": 0.05621337890625,
+              "cosine_distance": 0.04150390625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 0.182373046875,
+              "l2_distance": 0.050201416015625,
+              "cosine_distance": 0.0009765625,
+              "top_k_overlap": 0.7
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 0.53076171875,
+              "l2_distance": 0.047149658203125,
+              "cosine_distance": 0.1982421875,
+              "top_k_overlap": 0.6
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 0.369873046875,
+              "l2_distance": 0.09454345703125,
+              "cosine_distance": 0.02001953125,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 0.262939453125,
+              "l2_distance": 0.09503173828125,
+              "cosine_distance": 0.01123046875,
+              "top_k_overlap": 0.9
+            }
+          ]
+        },
+        "llama-3.2-3b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.97998046875,
+            "l2_distance": 0.6209716796875,
+            "cosine_distance": 0.99884033203125,
+            "top_k_overlap": 0.0125
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.7353515625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9287109375,
+              "l2_distance": 0.469482421875,
+              "cosine_distance": 0.9951171875,
+              "top_k_overlap": 0.1
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.9365234375,
+              "l2_distance": 0.58935546875,
+              "cosine_distance": 0.99609375,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9970703125,
+              "l2_distance": 0.28369140625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.9990234375,
+              "l2_distance": 1.2529296875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.9931640625,
+              "l2_distance": 0.332763671875,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.61279296875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.69140625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        },
+        "llama-3.2-1b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9803466796875,
+            "l2_distance": 0.609344482421875,
+            "cosine_distance": 0.9989013671875,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.76416015625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9443359375,
+              "l2_distance": 0.54443359375,
+              "cosine_distance": 0.9970703125,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.9267578125,
+              "l2_distance": 0.46923828125,
+              "cosine_distance": 0.9951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9970703125,
+              "l2_distance": 0.2744140625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.998046875,
+              "l2_distance": 1.2216796875,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.9921875,
+              "l2_distance": 0.329345703125,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.576171875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.9970703125,
+              "l2_distance": 0.6953125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "2": {
+      "prompt": "Analyze the causes and effects of climate change",
+      "distances": {
+        "llama-3.2-3b-llama-3.2-1b": {
+          "average": {
+            "l1_distance": 0.300543212890625,
+            "l2_distance": 0.08284378051757812,
+            "cosine_distance": 0.048193359375,
+            "top_k_overlap": 0.77
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 0.06732177734375,
+              "l2_distance": 0.0307769775390625,
+              "cosine_distance": 0.0,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 0.2125244140625,
+              "l2_distance": 0.01335906982421875,
+              "cosine_distance": 0.0126953125,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 0.3837890625,
+              "l2_distance": 0.04449462890625,
+              "cosine_distance": 0.02734375,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 0.38623046875,
+              "l2_distance": 0.040435791015625,
+              "cosine_distance": 0.02880859375,
+              "top_k_overlap": 0.6
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 0.208984375,
+              "l2_distance": 0.0980224609375,
+              "cosine_distance": 0.0009765625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 0.144287109375,
+              "l2_distance": 0.042022705078125,
+              "cosine_distance": 0.0009765625,
+              "top_k_overlap": 0.6
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 0.296142578125,
+              "l2_distance": 0.10797119140625,
+              "cosine_distance": 0.01025390625,
+              "top_k_overlap": 0.6
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 0.63525390625,
+              "l2_distance": 0.1759033203125,
+              "cosine_distance": 0.3427734375,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 8,
+              "l1_distance": 0.362548828125,
+              "l2_distance": 0.08807373046875,
+              "cosine_distance": 0.01806640625,
+              "top_k_overlap": 0.7
+            },
+            {
+              "token_idx": 9,
+              "l1_distance": 0.308349609375,
+              "l2_distance": 0.1873779296875,
+              "cosine_distance": 0.0400390625,
+              "top_k_overlap": 0.9
+            }
+          ]
+        },
+        "llama-3.2-3b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9787109375,
+            "l2_distance": 0.70966796875,
+            "cosine_distance": 0.99931640625,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.7353515625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9716796875,
+              "l2_distance": 0.301025390625,
+              "cosine_distance": 0.99853515625,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.8525390625,
+              "l2_distance": 0.228515625,
+              "cosine_distance": 0.99462890625,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9990234375,
+              "l2_distance": 0.93310546875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.9912109375,
+              "l2_distance": 0.94091796875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 2.0,
+              "l2_distance": 1.0908203125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.9990234375,
+              "l2_distance": 1.1103515625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.479248046875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 8,
+              "l1_distance": 1.9921875,
+              "l2_distance": 0.525390625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 9,
+              "l1_distance": 1.994140625,
+              "l2_distance": 0.751953125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        },
+        "llama-3.2-1b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.97763671875,
+            "l2_distance": 0.7085205078125,
+            "cosine_distance": 0.99912109375,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.76416015625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.96875,
+              "l2_distance": 0.301513671875,
+              "cosine_distance": 0.998046875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.841796875,
+              "l2_distance": 0.21630859375,
+              "cosine_distance": 0.9931640625,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9990234375,
+              "l2_distance": 0.92919921875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.994140625,
+              "l2_distance": 1.0166015625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 2.0,
+              "l2_distance": 1.068359375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.9990234375,
+              "l2_distance": 1.146484375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.443115234375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 8,
+              "l1_distance": 1.9931640625,
+              "l2_distance": 0.489501953125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 9,
+              "l1_distance": 1.9931640625,
+              "l2_distance": 0.7099609375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "3": {
+      "prompt": "Tell a story about friendship",
+      "distances": {
+        "llama-3.2-3b-llama-3.2-1b": {
+          "average": {
+            "l1_distance": 0.342132568359375,
+            "l2_distance": 0.09255727132161458,
+            "cosine_distance": 0.03271484375,
+            "top_k_overlap": 0.8166666666666665
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 0.06732177734375,
+              "l2_distance": 0.0307769775390625,
+              "cosine_distance": 0.0,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 0.1976318359375,
+              "l2_distance": 0.035186767578125,
+              "cosine_distance": 0.00146484375,
+              "top_k_overlap": 0.7
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 0.71923828125,
+              "l2_distance": 0.10577392578125,
+              "cosine_distance": 0.1474609375,
+              "top_k_overlap": 0.6
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 0.405029296875,
+              "l2_distance": 0.121337890625,
+              "cosine_distance": 0.0234375,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 0.363525390625,
+              "l2_distance": 0.154296875,
+              "cosine_distance": 0.015625,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 0.300048828125,
+              "l2_distance": 0.10797119140625,
+              "cosine_distance": 0.00830078125,
+              "top_k_overlap": 0.9
+            }
+          ]
+        },
+        "llama-3.2-3b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9847005208333333,
+            "l2_distance": 0.6573486328125,
+            "cosine_distance": 0.9994303385416666,
+            "top_k_overlap": 0.016666666666666666
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.73486328125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9716796875,
+              "l2_distance": 0.61669921875,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.491455078125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.63671875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.978515625,
+              "l2_distance": 0.67041015625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.97265625,
+              "l2_distance": 0.7939453125,
+              "cosine_distance": 0.9970703125,
+              "top_k_overlap": 0.1
+            }
+          ]
+        },
+        "llama-3.2-1b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9832356770833333,
+            "l2_distance": 0.6402180989583334,
+            "cosine_distance": 0.9995930989583334,
+            "top_k_overlap": 0.016666666666666666
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.763671875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9677734375,
+              "l2_distance": 0.60400390625,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.9970703125,
+              "l2_distance": 0.47509765625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.580078125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.974609375,
+              "l2_distance": 0.56787109375,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.97265625,
+              "l2_distance": 0.8505859375,
+              "cosine_distance": 0.99853515625,
+              "top_k_overlap": 0.1
+            }
+          ]
+        }
+      }
+    },
+    "4": {
+      "prompt": "Explain the basic principles of quantum computing",
+      "distances": {
+        "llama-3.2-3b-llama-3.2-1b": {
+          "average": {
+            "l1_distance": 0.2592705620659722,
+            "l2_distance": 0.058203803168402776,
+            "cosine_distance": 0.020128038194444444,
+            "top_k_overlap": 0.8444444444444444
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 0.06732177734375,
+              "l2_distance": 0.0307769775390625,
+              "cosine_distance": 0.0,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 0.1724853515625,
+              "l2_distance": 0.0306549072265625,
+              "cosine_distance": 0.0078125,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 0.37060546875,
+              "l2_distance": 0.06292724609375,
+              "cosine_distance": 0.01611328125,
+              "top_k_overlap": 0.7
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 0.33984375,
+              "l2_distance": 0.054168701171875,
+              "cosine_distance": 0.03564453125,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 0.40380859375,
+              "l2_distance": 0.1480712890625,
+              "cosine_distance": 0.00537109375,
+              "top_k_overlap": 0.7
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 0.171142578125,
+              "l2_distance": 0.050079345703125,
+              "cosine_distance": 0.00390625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 0.466796875,
+              "l2_distance": 0.043701171875,
+              "cosine_distance": 0.1064453125,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 0.2049560546875,
+              "l2_distance": 0.053619384765625,
+              "cosine_distance": 0.00439453125,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 8,
+              "l1_distance": 0.136474609375,
+              "l2_distance": 0.049835205078125,
+              "cosine_distance": 0.00146484375,
+              "top_k_overlap": 0.8
+            }
+          ]
+        },
+        "llama-3.2-3b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9893663194444444,
+            "l2_distance": 0.6324598524305556,
+            "cosine_distance": 0.9999457465277778,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.7353515625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.990234375,
+              "l2_distance": 0.546875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.9560546875,
+              "l2_distance": 0.50048828125,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.994140625,
+              "l2_distance": 0.302978515625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.98828125,
+              "l2_distance": 0.6083984375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.9990234375,
+              "l2_distance": 0.70849609375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.6484375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.9970703125,
+              "l2_distance": 0.64599609375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 8,
+              "l1_distance": 1.9921875,
+              "l2_distance": 0.9951171875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        },
+        "llama-3.2-1b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9878472222222223,
+            "l2_distance": 0.6222601996527778,
+            "cosine_distance": 0.9998914930555556,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.76416015625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.5439453125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.947265625,
+              "l2_distance": 0.5029296875,
+              "cosine_distance": 0.9990234375,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9931640625,
+              "l2_distance": 0.28466796875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.986328125,
+              "l2_distance": 0.486572265625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.9990234375,
+              "l2_distance": 0.69677734375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.646484375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.9970703125,
+              "l2_distance": 0.6474609375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 8,
+              "l1_distance": 1.9912109375,
+              "l2_distance": 1.02734375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "5": {
+      "prompt": "Describe how to learn a new language",
+      "distances": {
+        "llama-3.2-3b-llama-3.2-1b": {
+          "average": {
+            "l1_distance": 0.40796661376953125,
+            "l2_distance": 0.1335163116455078,
+            "cosine_distance": 0.0697021484375,
+            "top_k_overlap": 0.8
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 0.06732177734375,
+              "l2_distance": 0.0307769775390625,
+              "cosine_distance": 0.0,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 0.3330078125,
+              "l2_distance": 0.08599853515625,
+              "cosine_distance": 0.00244140625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 0.343505859375,
+              "l2_distance": 0.13720703125,
+              "cosine_distance": 0.00634765625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 0.3203125,
+              "l2_distance": 0.05621337890625,
+              "cosine_distance": 0.04150390625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 0.5322265625,
+              "l2_distance": 0.2174072265625,
+              "cosine_distance": 0.1875,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 0.84521484375,
+              "l2_distance": 0.29541015625,
+              "cosine_distance": 0.22998046875,
+              "top_k_overlap": 0.6
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 0.5966796875,
+              "l2_distance": 0.1787109375,
+              "cosine_distance": 0.08349609375,
+              "top_k_overlap": 0.7
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 0.2254638671875,
+              "l2_distance": 0.06640625,
+              "cosine_distance": 0.00634765625,
+              "top_k_overlap": 0.9
+            }
+          ]
+        },
+        "llama-3.2-3b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9752197265625,
+            "l2_distance": 0.511077880859375,
+            "cosine_distance": 0.998779296875,
+            "top_k_overlap": 0.0125
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.7353515625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9287109375,
+              "l2_distance": 0.469482421875,
+              "cosine_distance": 0.9951171875,
+              "top_k_overlap": 0.1
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.9365234375,
+              "l2_distance": 0.58935546875,
+              "cosine_distance": 0.99609375,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9970703125,
+              "l2_distance": 0.28369140625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.9931640625,
+              "l2_distance": 0.41650390625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.9912109375,
+              "l2_distance": 0.480712890625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.99609375,
+              "l2_distance": 0.492919921875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.9697265625,
+              "l2_distance": 0.62060546875,
+              "cosine_distance": 0.9990234375,
+              "top_k_overlap": 0.0
+            }
+          ]
+        },
+        "llama-3.2-1b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9759521484375,
+            "l2_distance": 0.476318359375,
+            "cosine_distance": 0.99884033203125,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.76416015625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9443359375,
+              "l2_distance": 0.54443359375,
+              "cosine_distance": 0.9970703125,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.9267578125,
+              "l2_distance": 0.46923828125,
+              "cosine_distance": 0.9951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9970703125,
+              "l2_distance": 0.2744140625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.9931640625,
+              "l2_distance": 0.410888671875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.310302734375,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.9951171875,
+              "l2_distance": 0.4072265625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.97265625,
+              "l2_distance": 0.6298828125,
+              "cosine_distance": 0.9990234375,
+              "top_k_overlap": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "6": {
+      "prompt": "Analyze the impact of social media on society",
+      "distances": {
+        "llama-3.2-3b-llama-3.2-1b": {
+          "average": {
+            "l1_distance": 0.241796875,
+            "l2_distance": 0.04679031372070312,
+            "cosine_distance": 0.0158203125,
+            "top_k_overlap": 0.8300000000000001
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 0.06732177734375,
+              "l2_distance": 0.0307769775390625,
+              "cosine_distance": 0.0,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 0.2125244140625,
+              "l2_distance": 0.01335906982421875,
+              "cosine_distance": 0.0126953125,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 0.3837890625,
+              "l2_distance": 0.04449462890625,
+              "cosine_distance": 0.02734375,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 0.38623046875,
+              "l2_distance": 0.040435791015625,
+              "cosine_distance": 0.02880859375,
+              "top_k_overlap": 0.6
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 0.21044921875,
+              "l2_distance": 0.05859375,
+              "cosine_distance": 0.00048828125,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 0.32373046875,
+              "l2_distance": 0.0243072509765625,
+              "cosine_distance": 0.0068359375,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 0.135498046875,
+              "l2_distance": 0.06842041015625,
+              "cosine_distance": 0.00048828125,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 0.05950927734375,
+              "l2_distance": 0.0186920166015625,
+              "cosine_distance": 0.00048828125,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 8,
+              "l1_distance": 0.449951171875,
+              "l2_distance": 0.07049560546875,
+              "cosine_distance": 0.0771484375,
+              "top_k_overlap": 0.7
+            },
+            {
+              "token_idx": 9,
+              "l1_distance": 0.18896484375,
+              "l2_distance": 0.09832763671875,
+              "cosine_distance": 0.00390625,
+              "top_k_overlap": 0.9
+            }
+          ]
+        },
+        "llama-3.2-3b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.96142578125,
+            "l2_distance": 0.6521240234375,
+            "cosine_distance": 0.9880859375,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.7353515625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9716796875,
+              "l2_distance": 0.301025390625,
+              "cosine_distance": 0.99853515625,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.8525390625,
+              "l2_distance": 0.228515625,
+              "cosine_distance": 0.99462890625,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9990234375,
+              "l2_distance": 0.93310546875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.93359375,
+              "l2_distance": 0.6669921875,
+              "cosine_distance": 0.9990234375,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.9765625,
+              "l2_distance": 0.48046875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.9990234375,
+              "l2_distance": 0.8369140625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.9931640625,
+              "l2_distance": 1.01171875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 8,
+              "l1_distance": 1.9169921875,
+              "l2_distance": 0.57666015625,
+              "cosine_distance": 0.888671875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 9,
+              "l1_distance": 1.982421875,
+              "l2_distance": 0.75048828125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        },
+        "llama-3.2-1b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.959765625,
+            "l2_distance": 0.670068359375,
+            "cosine_distance": 0.98955078125,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.76416015625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.96875,
+              "l2_distance": 0.301513671875,
+              "cosine_distance": 0.998046875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.841796875,
+              "l2_distance": 0.21630859375,
+              "cosine_distance": 0.9931640625,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9990234375,
+              "l2_distance": 0.92919921875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.935546875,
+              "l2_distance": 0.71923828125,
+              "cosine_distance": 0.9990234375,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.9736328125,
+              "l2_distance": 0.475341796875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.892578125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.9912109375,
+              "l2_distance": 0.99755859375,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 8,
+              "l1_distance": 1.919921875,
+              "l2_distance": 0.58203125,
+              "cosine_distance": 0.90576171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 9,
+              "l1_distance": 1.98046875,
+              "l2_distance": 0.82275390625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "7": {
+      "prompt": "Tell a story about courage",
+      "distances": {
+        "llama-3.2-3b-llama-3.2-1b": {
+          "average": {
+            "l1_distance": 0.3431498209635417,
+            "l2_distance": 0.09767405192057292,
+            "cosine_distance": 0.034098307291666664,
+            "top_k_overlap": 0.8166666666666665
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 0.06732177734375,
+              "l2_distance": 0.0307769775390625,
+              "cosine_distance": 0.0,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 0.1976318359375,
+              "l2_distance": 0.035186767578125,
+              "cosine_distance": 0.00146484375,
+              "top_k_overlap": 0.7
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 0.71923828125,
+              "l2_distance": 0.10577392578125,
+              "cosine_distance": 0.1474609375,
+              "top_k_overlap": 0.6
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 0.405029296875,
+              "l2_distance": 0.121337890625,
+              "cosine_distance": 0.0234375,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 0.363525390625,
+              "l2_distance": 0.154296875,
+              "cosine_distance": 0.015625,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 0.30615234375,
+              "l2_distance": 0.138671875,
+              "cosine_distance": 0.0166015625,
+              "top_k_overlap": 0.9
+            }
+          ]
+        },
+        "llama-3.2-3b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.98828125,
+            "l2_distance": 0.7081298828125,
+            "cosine_distance": 0.9999186197916666,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.73486328125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9716796875,
+              "l2_distance": 0.61669921875,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.491455078125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.63671875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.978515625,
+              "l2_distance": 0.67041015625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.994140625,
+              "l2_distance": 1.0986328125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        },
+        "llama-3.2-1b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.98681640625,
+            "l2_distance": 0.688720703125,
+            "cosine_distance": 0.9998372395833334,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.763671875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9677734375,
+              "l2_distance": 0.60400390625,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.9970703125,
+              "l2_distance": 0.47509765625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.580078125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.974609375,
+              "l2_distance": 0.56787109375,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.994140625,
+              "l2_distance": 1.1416015625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "8": {
+      "prompt": "Explain how blockchain technology works",
+      "distances": {
+        "llama-3.2-3b-llama-3.2-1b": {
+          "average": {
+            "l1_distance": 0.37725830078125,
+            "l2_distance": 0.15730067661830358,
+            "cosine_distance": 0.08258928571428571,
+            "top_k_overlap": 0.8714285714285716
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 0.06732177734375,
+              "l2_distance": 0.0307769775390625,
+              "cosine_distance": 0.0,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 0.17041015625,
+              "l2_distance": 0.0299835205078125,
+              "cosine_distance": 0.00732421875,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 0.372314453125,
+              "l2_distance": 0.0635986328125,
+              "cosine_distance": 0.01611328125,
+              "top_k_overlap": 0.7
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 0.31787109375,
+              "l2_distance": 0.06396484375,
+              "cosine_distance": 0.00634765625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 0.77685546875,
+              "l2_distance": 0.39599609375,
+              "cosine_distance": 0.25341796875,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 0.86767578125,
+              "l2_distance": 0.490478515625,
+              "cosine_distance": 0.294921875,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 0.068359375,
+              "l2_distance": 0.02630615234375,
+              "cosine_distance": 0.0,
+              "top_k_overlap": 0.9
+            }
+          ]
+        },
+        "llama-3.2-3b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9761439732142858,
+            "l2_distance": 0.6522042410714286,
+            "cosine_distance": 0.9988839285714286,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.73486328125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.990234375,
+              "l2_distance": 0.546875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.9560546875,
+              "l2_distance": 0.50146484375,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.943359375,
+              "l2_distance": 0.56787109375,
+              "cosine_distance": 0.9990234375,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.9814453125,
+              "l2_distance": 0.6533203125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.986328125,
+              "l2_distance": 0.708984375,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.986328125,
+              "l2_distance": 0.85205078125,
+              "cosine_distance": 0.994140625,
+              "top_k_overlap": 0.0
+            }
+          ]
+        },
+        "llama-3.2-1b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9727957589285714,
+            "l2_distance": 0.6052943638392857,
+            "cosine_distance": 0.9986746651785714,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.763671875,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.990234375,
+              "l2_distance": 0.5439453125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.947265625,
+              "l2_distance": 0.50439453125,
+              "cosine_distance": 0.9990234375,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9462890625,
+              "l2_distance": 0.59765625,
+              "cosine_distance": 0.9990234375,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.9775390625,
+              "l2_distance": 0.473388671875,
+              "cosine_distance": 0.99951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.97265625,
+              "l2_distance": 0.48486328125,
+              "cosine_distance": 0.9990234375,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.986328125,
+              "l2_distance": 0.869140625,
+              "cosine_distance": 0.994140625,
+              "top_k_overlap": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "9": {
+      "prompt": "Describe how to maintain a healthy lifestyle",
+      "distances": {
+        "llama-3.2-3b-llama-3.2-1b": {
+          "average": {
+            "l1_distance": 0.29016876220703125,
+            "l2_distance": 0.08039665222167969,
+            "cosine_distance": 0.01751708984375,
+            "top_k_overlap": 0.8375000000000001
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 0.06732177734375,
+              "l2_distance": 0.0307769775390625,
+              "cosine_distance": 0.0,
+              "top_k_overlap": 1.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 0.3330078125,
+              "l2_distance": 0.08599853515625,
+              "cosine_distance": 0.00244140625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 0.343505859375,
+              "l2_distance": 0.13720703125,
+              "cosine_distance": 0.00634765625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 0.3203125,
+              "l2_distance": 0.05621337890625,
+              "cosine_distance": 0.04150390625,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 0.2049560546875,
+              "l2_distance": 0.03631591796875,
+              "cosine_distance": 0.00146484375,
+              "top_k_overlap": 0.9
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 0.388671875,
+              "l2_distance": 0.0640869140625,
+              "cosine_distance": 0.017578125,
+              "top_k_overlap": 0.7
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 0.4658203125,
+              "l2_distance": 0.1719970703125,
+              "cosine_distance": 0.0654296875,
+              "top_k_overlap": 0.8
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 0.19775390625,
+              "l2_distance": 0.060577392578125,
+              "cosine_distance": 0.00537109375,
+              "top_k_overlap": 0.9
+            }
+          ]
+        },
+        "llama-3.2-3b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.97802734375,
+            "l2_distance": 0.636871337890625,
+            "cosine_distance": 0.9989013671875,
+            "top_k_overlap": 0.0125
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.7353515625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9287109375,
+              "l2_distance": 0.469482421875,
+              "cosine_distance": 0.9951171875,
+              "top_k_overlap": 0.1
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.9365234375,
+              "l2_distance": 0.58935546875,
+              "cosine_distance": 0.99609375,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9970703125,
+              "l2_distance": 0.28369140625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.9912109375,
+              "l2_distance": 0.66943359375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.96337890625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.9931640625,
+              "l2_distance": 0.6259765625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.990234375,
+              "l2_distance": 0.75830078125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        },
+        "llama-3.2-1b-gemma-2b": {
+          "average": {
+            "l1_distance": 1.9783935546875,
+            "l2_distance": 0.62603759765625,
+            "cosine_distance": 0.9990234375,
+            "top_k_overlap": 0.0
+          },
+          "token_level": [
+            {
+              "token_idx": 0,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.76416015625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 1,
+              "l1_distance": 1.9443359375,
+              "l2_distance": 0.54443359375,
+              "cosine_distance": 0.9970703125,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 2,
+              "l1_distance": 1.9267578125,
+              "l2_distance": 0.46923828125,
+              "cosine_distance": 0.9951171875,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 3,
+              "l1_distance": 1.9970703125,
+              "l2_distance": 0.2744140625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 4,
+              "l1_distance": 1.990234375,
+              "l2_distance": 0.6806640625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 5,
+              "l1_distance": 1.998046875,
+              "l2_distance": 0.9599609375,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 6,
+              "l1_distance": 1.9921875,
+              "l2_distance": 0.56689453125,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            },
+            {
+              "token_idx": 7,
+              "l1_distance": 1.9892578125,
+              "l2_distance": 0.74853515625,
+              "cosine_distance": 1.0,
+              "top_k_overlap": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "reference_profiles": {
+    "llama-3.2-3b": {
+      "mean_mean_prob": 3.11732292175293e-05,
+      "mean_top_prob": 0.448486328125,
+      "std_mean_prob": 0.0,
+      "std_top_prob": 0.1651611328125,
+      "tokenwise_stats": [
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.701171875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.424072265625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.56103515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.12042236328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.58544921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.32861328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.430419921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43603515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.701171875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.424072265625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.56103515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.12042236328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.58544921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.32861328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.430419921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43603515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.701171875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.424072265625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.56103515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.12042236328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.58544921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.32861328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.430419921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43603515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.701171875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.424072265625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.56103515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.12042236328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.58544921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.32861328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.430419921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43603515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.701171875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.424072265625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.56103515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.12042236328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.58544921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.32861328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.430419921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43603515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.701171875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.424072265625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.56103515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.12042236328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.58544921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.32861328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.430419921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43603515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.701171875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.424072265625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.56103515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.12042236328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.58544921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.32861328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.430419921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43603515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.701171875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.424072265625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.56103515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.12042236328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.58544921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.32861328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.430419921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43603515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.701171875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.424072265625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.56103515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.12042236328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.58544921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.32861328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.430419921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43603515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.701171875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.424072265625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.56103515625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.12042236328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.58544921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.32861328125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.430419921875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43603515625
+        }
+      ]
+    },
+    "llama-3.2-1b": {
+      "mean_mean_prob": 3.11732292175293e-05,
+      "mean_top_prob": 0.42529296875,
+      "std_mean_prob": 0.0,
+      "std_top_prob": 0.183349609375,
+      "tokenwise_stats": [
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.7314453125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.50390625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.42626953125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0936279296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.60009765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.313232421875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.30029296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43310546875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.7314453125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.50390625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.42626953125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0936279296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.60009765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.313232421875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.30029296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43310546875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.7314453125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.50390625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.42626953125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0936279296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.60009765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.313232421875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.30029296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43310546875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.7314453125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.50390625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.42626953125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0936279296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.60009765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.313232421875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.30029296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43310546875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.7314453125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.50390625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.42626953125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0936279296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.60009765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.313232421875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.30029296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43310546875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.7314453125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.50390625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.42626953125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0936279296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.60009765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.313232421875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.30029296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43310546875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.7314453125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.50390625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.42626953125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0936279296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.60009765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.313232421875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.30029296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43310546875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.7314453125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.50390625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.42626953125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0936279296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.60009765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.313232421875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.30029296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43310546875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.7314453125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.50390625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.42626953125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0936279296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.60009765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.313232421875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.30029296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43310546875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.7314453125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.50390625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.42626953125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0936279296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.60009765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.313232421875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.30029296875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.43310546875
+        }
+      ]
+    },
+    "gemma-2b": {
+      "mean_mean_prob": 3.11732292175293e-05,
+      "mean_top_prob": 0.30810546875,
+      "std_mean_prob": 0.0,
+      "std_top_prob": 0.274658203125,
+      "tokenwise_stats": [
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.1131591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.086181640625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.06591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0963134765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.272216796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.89892578125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.388671875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.54345703125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.1131591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.086181640625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.06591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0963134765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.272216796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.89892578125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.388671875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.54345703125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.1131591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.086181640625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.06591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0963134765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.272216796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.89892578125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.388671875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.54345703125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.1131591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.086181640625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.06591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0963134765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.272216796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.89892578125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.388671875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.54345703125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.1131591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.086181640625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.06591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0963134765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.272216796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.89892578125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.388671875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.54345703125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.1131591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.086181640625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.06591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0963134765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.272216796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.89892578125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.388671875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.54345703125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.1131591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.086181640625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.06591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0963134765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.272216796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.89892578125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.388671875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.54345703125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.1131591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.086181640625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.06591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0963134765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.272216796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.89892578125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.388671875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.54345703125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.1131591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.086181640625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.06591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0963134765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.272216796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.89892578125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.388671875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.54345703125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.1131591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.086181640625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.06591796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.0963134765625
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.272216796875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.89892578125
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.388671875
+        },
+        {
+          "mean_prob": 3.11732292175293e-05,
+          "top_prob": 0.54345703125
+        }
+      ]
+    }
+  },
+  "green_list_sample": [
+    26206,
+    51073,
+    111515,
+    90944,
+    28889,
+    59120,
+    23452,
+    17162,
+    51629,
+    66684,
+    77725,
+    117967,
+    19455,
+    21024,
+    85979,
+    14326,
+    126492,
+    47477,
+    93025,
+    124573
+  ]
+}
